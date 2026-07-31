@@ -23,6 +23,9 @@ import {
   Calendar,
   Sparkles,
   Clock,
+  Wind,
+  Box,
+  Settings,
 } from "lucide-react";
 import { toast } from "sonner";
 import { Reveal } from "@/components/Reveal";
@@ -57,26 +60,30 @@ export const Route = createFileRoute("/")({
 });
 
 const heroBadges = [
-  "Mechanical Design",
-  "Manufacturing Engineering",
-  "CNC Programming",
-  "Sheet Metal Design",
+  "AHU & FCU Unit Design",
+  "HVAC Ductwork & Dampers",
+  "Precision Sheet Metal",
+  "CypCut & Lantek CAM",
+  "CAD/CAM 2D/3D Drafting",
 ];
 
 const stats = [
   { value: "7+", label: "Years of Experience" },
   { value: "4", label: "Core Engineering Platforms" },
-  { value: "12", label: "Key Technical Domains" },
-  { value: "100%", label: "Production & Quality Focused" },
+  { value: "100%", label: "AHU / FCU & HVAC Focused" },
+  { value: "100%", label: "Production & Quality Compliance" },
 ];
 
 const aboutPills = [
-  "Sheet-Metal Design",
-  "CAD/CAM Engineering",
-  "HVAC Components",
-  "Production Planning",
-  "Estimation & Costing",
-  "Quality Compliance",
+  "AHU Double-Skin Panels",
+  "FCU Casing & Drain Pans",
+  "HVAC Air Ducting & VCD",
+  "Precision Sheet-Metal Design",
+  "CypCut Fiber Laser",
+  "Lantek Turret Punching",
+  "Bend Allowance & K-Factor",
+  "Production Planning & BOM",
+  "ISO Quality Compliance",
 ];
 
 const coreSkills = [
@@ -230,26 +237,26 @@ const achievements = [
 const capabilities = [
   {
     id: "mechanical",
-    title: "Mechanical Design & Manufacturing",
-    desc: "Precision sheet-metal design, mechanical product development, fabrication drawings, assembly drawings, design for manufacturing (DFM), and BOM preparation.",
+    title: "AHU & FCU Unit Casing Design",
+    desc: "Development of AHU double-skin insulated panels, thermal-break frame profiles, FCU casings, sloped stainless-steel drain pans, and sheet-metal enclosures using AutoCAD 2D/3D & SolidWorks with precise bend deductions.",
     icon: Wrench,
   },
   {
     id: "cnc",
-    title: "CNC Programming & Production",
-    desc: "CNC fiber laser programming, CNC turret punch programming, machine setup support, CNC machining coordination, and process optimization.",
+    title: "CNC Fiber Laser & Turret Punch CAM",
+    desc: "Expert CNC programming via CypCut for Fiber Laser cutting and Lantek Expert for CNC Turret Punching. Generating optimized G-code, automatic nesting, and lead-in/lead-out parameters for maximum sheet utilization.",
     icon: Cpu,
   },
   {
     id: "production",
-    title: "Production Engineering",
-    desc: "Production planning, estimation, cost analysis, nesting optimization, stainless-steel fabrication, and commercial kitchen equipment design.",
+    title: "HVAC Ductwork & Production Planning",
+    desc: "Flat pattern drafting for rectangular & spiral ductwork, TDC/TDF flange corners, Volume Control Dampers (VCD), Fire Dampers (FD), Bill of Materials (BOM) preparation, and shop floor coordination.",
     icon: Layers,
   },
   {
     id: "quality",
-    title: "Quality Systems & Inspection",
-    desc: "QA/QC coordination, pre-delivery inspection (PDI), casting quality control, ISO documentation, process standardization, and drawing compliance.",
+    title: "Quality Control & ISO Compliance",
+    desc: "First-article inspection (FAI), sheet-metal tolerance verification, ISO 9001:2015 process standardization, pre-delivery inspection (PDI), and final assembly quality assurance.",
     icon: ShieldCheck,
   },
 ];
@@ -522,6 +529,67 @@ function Index() {
               </div>
             </Reveal>
           </div>
+        </div>
+      </Section>
+
+      {/* HVAC, AHU & FCU Specialty Showcase */}
+      <Section id="hvac-products" title="HVAC & Sheet Metal Product Engineering" kicker="AHU, FCU & Air Ducting Specialty">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <Reveal delay={60}>
+            <div className="group h-full rounded-3xl border border-border bg-card p-6 shadow-xs transition-all duration-300 hover:border-foreground hover:bg-foreground hover:text-background hover:shadow-xl hover:scale-[1.015]">
+              <div className="flex size-12 items-center justify-center rounded-2xl bg-primary/10 text-primary group-hover:bg-background group-hover:text-foreground transition-colors mb-4">
+                <Wind className="size-6" />
+              </div>
+              <h3 className="text-lg font-extrabold text-foreground group-hover:text-background transition-colors">
+                AHU Unit Design & Assembly
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground group-hover:text-background/90 transition-colors">
+                Air Handling Unit double-skin insulated panel drafting, thermal-break profile frames, access doors, filter racks, coil brackets, and airtight casing design.
+              </p>
+            </div>
+          </Reveal>
+
+          <Reveal delay={120}>
+            <div className="group h-full rounded-3xl border border-border bg-card p-6 shadow-xs transition-all duration-300 hover:border-foreground hover:bg-foreground hover:text-background hover:shadow-xl hover:scale-[1.015]">
+              <div className="flex size-12 items-center justify-center rounded-2xl bg-primary/10 text-primary group-hover:bg-background group-hover:text-foreground transition-colors mb-4">
+                <Box className="size-6" />
+              </div>
+              <h3 className="text-lg font-extrabold text-foreground group-hover:text-background transition-colors">
+                FCU Casing & Stainless Drain Pans
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground group-hover:text-background/90 transition-colors">
+                Fan Coil Unit casing sheet-metal fabrication, sloped stainless-steel condensate drain pans, acoustic insulation lining, and CNC punch tooling layouts.
+              </p>
+            </div>
+          </Reveal>
+
+          <Reveal delay={180}>
+            <div className="group h-full rounded-3xl border border-border bg-card p-6 shadow-xs transition-all duration-300 hover:border-foreground hover:bg-foreground hover:text-background hover:shadow-xl hover:scale-[1.015]">
+              <div className="flex size-12 items-center justify-center rounded-2xl bg-primary/10 text-primary group-hover:bg-background group-hover:text-foreground transition-colors mb-4">
+                <Settings className="size-6" />
+              </div>
+              <h3 className="text-lg font-extrabold text-foreground group-hover:text-background transition-colors">
+                HVAC Ductwork & VCD Dampers
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground group-hover:text-background/90 transition-colors">
+                Spiral & rectangular duct flat pattern unfolding, TDC/TDF flange corners, Volume Control Dampers (VCD), and Fire Dampers (FD) fabrication drawings.
+              </p>
+            </div>
+          </Reveal>
+
+          <Reveal delay={240}>
+            <div className="group h-full rounded-3xl border border-border bg-card p-6 shadow-xs transition-all duration-300 hover:border-foreground hover:bg-foreground hover:text-background hover:shadow-xl hover:scale-[1.015]">
+              <div className="flex size-12 items-center justify-center rounded-2xl bg-primary/10 text-primary group-hover:bg-background group-hover:text-foreground transition-colors mb-4">
+                <Layers className="size-6" />
+              </div>
+              <h3 className="text-lg font-extrabold text-foreground group-hover:text-background transition-colors">
+                CypCut & Lantek CNC CAM
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground group-hover:text-background/90 transition-colors">
+                CNC Fiber Laser cutting via CypCut, Lantek Expert turret punch nesting optimization, sheet metal scrap reduction, and shop floor G-code generation.
+              </p>
+            </div>
+          </Reveal>
         </div>
       </Section>
 
