@@ -1176,144 +1176,151 @@ function Index() {
           </Reveal>
         </div>
       </Section>
-
       {/* Contact Section */}
       <Section id="contact" title="Contact & Inquiries" kicker="Let's Connect">
-        <div className="grid gap-8 lg:grid-cols-12">
-          {/* Contact Details */}
-          <div className="space-y-6 lg:col-span-5">
+        <div className="grid gap-6 lg:grid-cols-2 items-stretch">
+          {/* Left Column: Direct Contact Info Card */}
+          <div className="flex flex-col justify-between rounded-3xl border border-border bg-card p-6 sm:p-8 shadow-xs">
             <div>
-              <h3 className="text-2xl font-bold tracking-tight">Available for Engineering Opportunities</h3>
-              <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
-                Reach out for roles in Mechanical Design Engineering, Manufacturing Engineering, CAD/CAM support, CNC programming, production coordination, and technical documentation across UAE and internationally.
-              </p>
-            </div>
-
-            <div className="space-y-3">
-              <a
-                href="tel:+971543351693"
-                className="flex items-center gap-4 rounded-2xl border border-border bg-card p-4 transition-all hover:border-foreground/20 hover:shadow-xs"
-              >
-                <div className="flex size-10 items-center justify-center rounded-xl bg-secondary">
-                  <Phone className="size-4" />
+              <div className="flex items-center gap-3.5 border-b border-border/60 pb-4">
+                <div className="flex size-11 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                  <Phone className="size-5" />
                 </div>
                 <div>
-                  <small className="block text-xs text-muted-foreground">Phone</small>
-                  <strong className="text-sm font-semibold">+971 54 335 1693</strong>
-                </div>
-              </a>
-
-              <a
-                href="mailto:adaikalaraj1993@gmail.com"
-                className="flex items-center gap-4 rounded-2xl border border-border bg-card p-4 transition-all hover:border-foreground/20 hover:shadow-xs"
-              >
-                <div className="flex size-10 items-center justify-center rounded-xl bg-secondary">
-                  <Mail className="size-4" />
-                </div>
-                <div>
-                  <small className="block text-xs text-muted-foreground">Email</small>
-                  <strong className="text-sm font-semibold">adaikalaraj1993@gmail.com</strong>
-                </div>
-              </a>
-
-              <a
-                href="https://linkedin.com/in/adaikalaraj-selvaraj-b7b275288"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-4 rounded-2xl border border-border bg-card p-4 transition-all hover:border-foreground/20 hover:shadow-xs"
-              >
-                <div className="flex size-10 items-center justify-center rounded-xl bg-secondary">
-                  <Linkedin className="size-4" />
-                </div>
-                <div>
-                  <small className="block text-xs text-muted-foreground">LinkedIn</small>
-                  <strong className="text-sm font-semibold">adaikalaraj-selvaraj-b7b275288</strong>
-                </div>
-              </a>
-
-              <div className="flex items-center gap-4 rounded-2xl border border-border bg-card p-4">
-                <div className="flex size-10 items-center justify-center rounded-xl bg-secondary">
-                  <MapPin className="size-4" />
-                </div>
-                <div>
-                  <small className="block text-xs text-muted-foreground">Location</small>
-                  <strong className="text-sm font-semibold">Ajman, United Arab Emirates</strong>
+                  <h3 className="text-xl font-bold text-foreground">Direct Contact Details</h3>
+                  <p className="text-xs text-muted-foreground">Reach out directly via phone, email, or LinkedIn</p>
                 </div>
               </div>
 
+              <p className="mt-4 text-xs sm:text-sm leading-relaxed text-muted-foreground">
+                Available for Mechanical Design Engineering, Manufacturing Engineering, CAD/CAM support, CNC programming, and HVAC sheet-metal roles in UAE & internationally.
+              </p>
+
+              <div className="mt-5 space-y-3">
+                <a
+                  href="tel:+971543351693"
+                  className="flex items-center gap-3.5 rounded-2xl border border-border/80 bg-secondary/30 p-3.5 transition-all hover:bg-secondary hover:border-foreground/30"
+                >
+                  <div className="flex size-9 items-center justify-center rounded-xl bg-background text-foreground shadow-2xs">
+                    <Phone className="size-4" />
+                  </div>
+                  <div>
+                    <span className="block text-[11px] font-bold text-muted-foreground uppercase">Phone / Mobile</span>
+                    <strong className="text-sm font-extrabold text-foreground">+971 54 335 1693</strong>
+                  </div>
+                </a>
+
+                <a
+                  href="mailto:adaikalaraj1993@gmail.com"
+                  className="flex items-center gap-3.5 rounded-2xl border border-border/80 bg-secondary/30 p-3.5 transition-all hover:bg-secondary hover:border-foreground/30"
+                >
+                  <div className="flex size-9 items-center justify-center rounded-xl bg-background text-foreground shadow-2xs">
+                    <Mail className="size-4" />
+                  </div>
+                  <div>
+                    <span className="block text-[11px] font-bold text-muted-foreground uppercase">Email Address</span>
+                    <strong className="text-sm font-extrabold text-foreground">adaikalaraj1993@gmail.com</strong>
+                  </div>
+                </a>
+
+                <a
+                  href="https://linkedin.com/in/adaikalaraj-selvaraj-b7b275288"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3.5 rounded-2xl border border-border/80 bg-secondary/30 p-3.5 transition-all hover:bg-secondary hover:border-foreground/30"
+                >
+                  <div className="flex size-9 items-center justify-center rounded-xl bg-background text-foreground shadow-2xs">
+                    <Linkedin className="size-4" />
+                  </div>
+                  <div>
+                    <span className="block text-[11px] font-bold text-muted-foreground uppercase">LinkedIn Profile</span>
+                    <strong className="text-sm font-extrabold text-foreground">adaikalaraj-selvaraj-b7b275288</strong>
+                  </div>
+                </a>
+
+                <div className="flex items-center gap-3.5 rounded-2xl border border-border/80 bg-secondary/30 p-3.5">
+                  <div className="flex size-9 items-center justify-center rounded-xl bg-background text-foreground shadow-2xs">
+                    <MapPin className="size-4" />
+                  </div>
+                  <div>
+                    <span className="block text-[11px] font-bold text-muted-foreground uppercase">Current Location</span>
+                    <strong className="text-sm font-extrabold text-foreground">Ajman, United Arab Emirates</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-6 pt-4 border-t border-border/60">
               <a
                 href="/Adaikalaraj_Selvaraj_Resume.pdf"
                 download="Adaikalaraj_Selvaraj_Resume.pdf"
-                className="flex items-center gap-4 rounded-2xl border border-primary/30 bg-primary/10 p-4 transition-all hover:bg-primary/20 hover:shadow-xs group"
+                className="btn-luzia flex items-center justify-center gap-2 bg-primary px-5 py-3 text-xs sm:text-sm font-bold text-primary-foreground w-full"
               >
-                <div className="flex size-10 items-center justify-center rounded-xl bg-primary text-primary-foreground">
-                  <FileText className="size-5" />
-                </div>
-                <div>
-                  <small className="block text-xs font-bold text-primary">Download Document</small>
-                  <strong className="text-sm font-bold text-foreground group-hover:underline">
-                    Adaikalaraj_Selvaraj_Resume.pdf
-                  </strong>
-                </div>
+                <FileText className="size-4" /> Download Official CV / Resume (PDF)
               </a>
             </div>
           </div>
 
-          {/* Form */}
-          <div className="lg:col-span-7">
-            <div className="rounded-3xl border border-border bg-card p-6 sm:p-8 shadow-sm">
-              <h3 className="text-xl font-bold">Quick Inquiry</h3>
-              <p className="mt-1 text-xs text-muted-foreground">
-                Send a direct message regarding projects, consultations, or employment opportunities.
-              </p>
+          {/* Right Column: Inquiry Form Card */}
+          <div className="flex flex-col justify-between rounded-3xl border border-border bg-card p-6 sm:p-8 shadow-xs">
+            <div>
+              <div className="flex items-center gap-3.5 border-b border-border/60 pb-4">
+                <div className="flex size-11 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                  <Mail className="size-5" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-foreground">Quick Inquiry Form</h3>
+                  <p className="text-xs text-muted-foreground">Send a direct message regarding roles or projects</p>
+                </div>
+              </div>
 
-              <form onSubmit={handleFormSubmit} className="mt-6 space-y-4">
-                <div className="grid gap-4 sm:grid-cols-2">
+              <form onSubmit={handleFormSubmit} className="mt-5 space-y-3.5">
+                <div className="grid gap-3.5 sm:grid-cols-2">
                   <div>
-                    <label className="mb-1 block text-xs font-semibold text-foreground">Your Name</label>
+                    <label className="mb-1 block text-xs font-bold text-foreground">Your Name</label>
                     <input
                       type="text"
                       required
                       placeholder="John Doe"
-                      className="w-full rounded-2xl border border-border bg-background px-4 py-2.5 text-xs text-foreground placeholder:text-muted-foreground focus:border-foreground focus:outline-none"
+                      className="w-full rounded-xl border border-border bg-background px-3.5 py-2.5 text-xs text-foreground placeholder:text-muted-foreground focus:border-foreground focus:outline-none"
                     />
                   </div>
                   <div>
-                    <label className="mb-1 block text-xs font-semibold text-foreground">Your Email</label>
+                    <label className="mb-1 block text-xs font-bold text-foreground">Your Email</label>
                     <input
                       type="email"
                       required
                       placeholder="john@example.com"
-                      className="w-full rounded-2xl border border-border bg-background px-4 py-2.5 text-xs text-foreground placeholder:text-muted-foreground focus:border-foreground focus:outline-none"
+                      className="w-full rounded-xl border border-border bg-background px-3.5 py-2.5 text-xs text-foreground placeholder:text-muted-foreground focus:border-foreground focus:outline-none"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="mb-1 block text-xs font-semibold text-foreground">Subject</label>
+                  <label className="mb-1 block text-xs font-bold text-foreground">Subject</label>
                   <input
                     type="text"
                     required
                     placeholder="Engineering Inquiry / Job Opportunity"
-                    className="w-full rounded-2xl border border-border bg-background px-4 py-2.5 text-xs text-foreground placeholder:text-muted-foreground focus:border-foreground focus:outline-none"
+                    className="w-full rounded-xl border border-border bg-background px-3.5 py-2.5 text-xs text-foreground placeholder:text-muted-foreground focus:border-foreground focus:outline-none"
                   />
                 </div>
 
                 <div>
-                  <label className="mb-1 block text-xs font-semibold text-foreground">Message</label>
+                  <label className="mb-1 block text-xs font-bold text-foreground">Message</label>
                   <textarea
                     rows={4}
                     required
                     placeholder="Write your message here..."
-                    className="w-full rounded-2xl border border-border bg-background px-4 py-2.5 text-xs text-foreground placeholder:text-muted-foreground focus:border-foreground focus:outline-none"
+                    className="w-full rounded-xl border border-border bg-background px-3.5 py-2.5 text-xs text-foreground placeholder:text-muted-foreground focus:border-foreground focus:outline-none resize-none"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="btn-luzia group w-full bg-primary py-3.5 text-xs text-primary-foreground"
+                  className="btn-luzia group flex w-full items-center justify-center gap-2 bg-foreground py-3 text-xs sm:text-sm font-bold text-background transition-transform active:scale-95"
                 >
-                  Send Message <ArrowRight className="size-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+                  Send Message <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
                 </button>
               </form>
             </div>
