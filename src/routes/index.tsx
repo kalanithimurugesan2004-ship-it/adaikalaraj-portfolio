@@ -30,6 +30,10 @@ import {
 import { toast } from "sonner";
 import { Reveal } from "@/components/Reveal";
 import heroPortrait from "@/assets/hero-portrait.png";
+import ahuRender from "@/assets/ahu_render.png";
+import fcuRender from "@/assets/fcu_render.png";
+import hvacDuctworkRender from "@/assets/hvac_ductwork_render.png";
+import cncLaserRender from "@/assets/cnc_laser_render.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -386,28 +390,22 @@ function Index() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden px-4 sm:px-6 pt-6 pb-10 w-full max-w-full">
+      <section className="relative overflow-hidden px-5 pt-6 pb-8">
         <div className="pointer-events-none absolute left-1/2 top-2 aura h-[450px] w-[550px] -translate-x-1/2 rounded-full opacity-70" />
-        <div className="pointer-events-none absolute inset-0 cad-grid opacity-25" />
-
         <div className="relative mx-auto max-w-6xl">
           <div className="grid items-center gap-8 md:grid-cols-[1fr_460px] lg:grid-cols-[1fr_540px]">
             {/* Left Content */}
             <div className="animate-[fade-in_0.8s_ease-out_both] text-left">
-              {/* HVAC Spec Pill */}
-              <div className="mb-3.5 inline-flex items-center gap-2 rounded-full border border-sky-500/30 bg-sky-500/10 px-4 py-1.5 text-xs font-extrabold text-sky-800 dark:text-sky-300 shadow-2xs">
-                <Wind className="size-3.5" /> HVAC • AHU • FCU • Precision Sheet Metal Engineering
-              </div>
-
               <h1 className="text-3xl font-black tracking-tight sm:text-5xl lg:text-6xl">
                 Adaikalaraj Selvaraj
               </h1>
-              <h2 className="mt-2 text-lg font-bold text-muted-foreground sm:text-2xl lg:text-3xl leading-snug">
-                Mechanical Design Engineer | HVAC & Sheet Metal Specialist | AHU / FCU Product Engineer
+              <h2 className="mt-2 text-xl font-bold text-muted-foreground sm:text-2xl lg:text-3xl">
+                Mechanical Design Engineer | Manufacturing Engineer | CNC Programmer
               </h2>
-              <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-lg">
+              <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
                 Results-driven Mechanical Design Engineer with <strong>7+ years</strong> of
-                industrial expertise in sheet metal fabrication, AHU double-skin casing, FCU unit design, CAD/CAM drafting, CypCut & Lantek CNC programming, and HVAC product development.
+                manufacturing-focused expertise in sheet-metal design, CAD/CAM engineering, CNC
+                programming, fabrication documentation, production planning, and HVAC-related sheet-metal systems.
               </p>
 
               {/* Badges */}
@@ -415,7 +413,7 @@ function Index() {
                 {heroBadges.map((badge) => (
                   <span
                     key={badge}
-                    className="rounded-full border border-border bg-card px-3.5 py-1.5 text-xs sm:text-sm font-bold shadow-2xs transition-all hover:border-sky-500/40 hover:bg-sky-500/5"
+                    className="rounded-full border border-border bg-card px-3.5 py-1.5 text-xs sm:text-sm font-semibold shadow-xs transition-colors hover:border-foreground/20"
                   >
                     {badge}
                   </span>
@@ -440,15 +438,15 @@ function Index() {
                 </button>
                 <button
                   type="button"
-                  onClick={() => scrollTo("hvac-products")}
+                  onClick={() => scrollTo("experience")}
                   className="btn-luzia-secondary border border-border bg-card px-6 py-3.5 text-sm sm:text-base font-bold hover:bg-secondary"
                 >
-                  HVAC & AHU/FCU Products
+                  View Experience
                 </button>
               </div>
             </div>
 
-            {/* Right Visual Image */}
+            {/* Right Visual Image - Extra Large Prominent Portrait */}
             <div className="relative mx-auto flex w-full max-w-[560px] lg:max-w-[620px] items-center justify-center">
               <div className="relative w-full overflow-hidden [mask-image:linear-gradient(to_bottom,black_75%,transparent_98%)]">
                 <img
@@ -541,59 +539,115 @@ function Index() {
       {/* HVAC, AHU & FCU Specialty Showcase */}
       <Section id="hvac-products" title="HVAC & Sheet Metal Product Engineering" kicker="AHU, FCU & Air Ducting Specialty">
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {/* Card 1: AHU */}
           <Reveal delay={60}>
-            <div className="group h-full rounded-3xl border border-border bg-card p-6 shadow-xs transition-all duration-300 hover:border-foreground hover:bg-foreground hover:text-background hover:shadow-xl hover:scale-[1.015]">
-              <div className="flex size-12 items-center justify-center rounded-2xl bg-primary/10 text-primary group-hover:bg-background group-hover:text-foreground transition-colors mb-4">
-                <Wind className="size-6" />
+            <div className="group flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-xs transition-all duration-300 hover:border-foreground hover:bg-foreground hover:text-background hover:shadow-2xl hover:scale-[1.015]">
+              <div className="relative h-48 w-full overflow-hidden bg-slate-950">
+                <img
+                  src={ahuRender}
+                  alt="Air Handling Unit (AHU) 3D CAD render"
+                  className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+                <div className="absolute top-3 right-3 flex size-10 items-center justify-center rounded-xl bg-background/90 text-foreground backdrop-blur-md shadow-md group-hover:bg-background group-hover:text-foreground">
+                  <Wind className="size-5" />
+                </div>
+                <span className="absolute bottom-3 left-3 rounded-full bg-primary/90 px-3 py-1 text-[11px] font-black uppercase tracking-wider text-primary-foreground shadow-sm">
+                  AHU Unit Systems
+                </span>
               </div>
-              <h3 className="text-lg font-extrabold text-foreground group-hover:text-background transition-colors">
-                AHU Unit Design & Assembly
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground group-hover:text-background/90 transition-colors">
-                Air Handling Unit double-skin insulated panel drafting, thermal-break profile frames, access doors, filter racks, coil brackets, and airtight casing design.
-              </p>
+              <div className="flex flex-1 flex-col p-6">
+                <h3 className="text-lg font-black text-foreground group-hover:text-background transition-colors">
+                  AHU Unit Design & Assembly
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground group-hover:text-background/90 transition-colors">
+                  Air Handling Unit double-skin insulated panel drafting, thermal-break profile frames, access doors, filter racks, coil brackets, and 100% airtight casing design.
+                </p>
+              </div>
             </div>
           </Reveal>
 
+          {/* Card 2: FCU */}
           <Reveal delay={120}>
-            <div className="group h-full rounded-3xl border border-border bg-card p-6 shadow-xs transition-all duration-300 hover:border-foreground hover:bg-foreground hover:text-background hover:shadow-xl hover:scale-[1.015]">
-              <div className="flex size-12 items-center justify-center rounded-2xl bg-primary/10 text-primary group-hover:bg-background group-hover:text-foreground transition-colors mb-4">
-                <Box className="size-6" />
+            <div className="group flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-xs transition-all duration-300 hover:border-foreground hover:bg-foreground hover:text-background hover:shadow-2xl hover:scale-[1.015]">
+              <div className="relative h-48 w-full overflow-hidden bg-slate-950">
+                <img
+                  src={fcuRender}
+                  alt="Fan Coil Unit (FCU) 3D CAD casing render"
+                  className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+                <div className="absolute top-3 right-3 flex size-10 items-center justify-center rounded-xl bg-background/90 text-foreground backdrop-blur-md shadow-md group-hover:bg-background group-hover:text-foreground">
+                  <Box className="size-5" />
+                </div>
+                <span className="absolute bottom-3 left-3 rounded-full bg-primary/90 px-3 py-1 text-[11px] font-black uppercase tracking-wider text-primary-foreground shadow-sm">
+                  FCU Casing & Trays
+                </span>
               </div>
-              <h3 className="text-lg font-extrabold text-foreground group-hover:text-background transition-colors">
-                FCU Casing & Stainless Drain Pans
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground group-hover:text-background/90 transition-colors">
-                Fan Coil Unit casing sheet-metal fabrication, sloped stainless-steel condensate drain pans, acoustic insulation lining, and CNC punch tooling layouts.
-              </p>
+              <div className="flex flex-1 flex-col p-6">
+                <h3 className="text-lg font-black text-foreground group-hover:text-background transition-colors">
+                  FCU Casing & Stainless Drain Pans
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground group-hover:text-background/90 transition-colors">
+                  Fan Coil Unit casing sheet-metal fabrication, sloped stainless-steel condensate drain pans, acoustic insulation lining, and CNC punch tooling layouts.
+                </p>
+              </div>
             </div>
           </Reveal>
 
+          {/* Card 3: HVAC Ductwork */}
           <Reveal delay={180}>
-            <div className="group h-full rounded-3xl border border-border bg-card p-6 shadow-xs transition-all duration-300 hover:border-foreground hover:bg-foreground hover:text-background hover:shadow-xl hover:scale-[1.015]">
-              <div className="flex size-12 items-center justify-center rounded-2xl bg-primary/10 text-primary group-hover:bg-background group-hover:text-foreground transition-colors mb-4">
-                <Settings className="size-6" />
+            <div className="group flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-xs transition-all duration-300 hover:border-foreground hover:bg-foreground hover:text-background hover:shadow-2xl hover:scale-[1.015]">
+              <div className="relative h-48 w-full overflow-hidden bg-slate-950">
+                <img
+                  src={hvacDuctworkRender}
+                  alt="HVAC Air Ductwork and VCD Damper 3D CAD render"
+                  className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+                <div className="absolute top-3 right-3 flex size-10 items-center justify-center rounded-xl bg-background/90 text-foreground backdrop-blur-md shadow-md group-hover:bg-background group-hover:text-foreground">
+                  <Settings className="size-5" />
+                </div>
+                <span className="absolute bottom-3 left-3 rounded-full bg-primary/90 px-3 py-1 text-[11px] font-black uppercase tracking-wider text-primary-foreground shadow-sm">
+                  Ductwork & Dampers
+                </span>
               </div>
-              <h3 className="text-lg font-extrabold text-foreground group-hover:text-background transition-colors">
-                HVAC Ductwork & VCD Dampers
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground group-hover:text-background/90 transition-colors">
-                Spiral & rectangular duct flat pattern unfolding, TDC/TDF flange corners, Volume Control Dampers (VCD), and Fire Dampers (FD) fabrication drawings.
-              </p>
+              <div className="flex flex-1 flex-col p-6">
+                <h3 className="text-lg font-black text-foreground group-hover:text-background transition-colors">
+                  HVAC Ductwork & VCD Dampers
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground group-hover:text-background/90 transition-colors">
+                  Spiral & rectangular duct flat pattern unfolding, TDC/TDF flange corners, Volume Control Dampers (VCD), and Fire Dampers (FD) fabrication drawings.
+                </p>
+              </div>
             </div>
           </Reveal>
 
+          {/* Card 4: CNC Laser Cutting */}
           <Reveal delay={240}>
-            <div className="group h-full rounded-3xl border border-border bg-card p-6 shadow-xs transition-all duration-300 hover:border-foreground hover:bg-foreground hover:text-background hover:shadow-xl hover:scale-[1.015]">
-              <div className="flex size-12 items-center justify-center rounded-2xl bg-primary/10 text-primary group-hover:bg-background group-hover:text-foreground transition-colors mb-4">
-                <Layers className="size-6" />
+            <div className="group flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-xs transition-all duration-300 hover:border-foreground hover:bg-foreground hover:text-background hover:shadow-2xl hover:scale-[1.015]">
+              <div className="relative h-48 w-full overflow-hidden bg-slate-950">
+                <img
+                  src={cncLaserRender}
+                  alt="CNC Fiber Laser cutting sheet metal render"
+                  className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+                <div className="absolute top-3 right-3 flex size-10 items-center justify-center rounded-xl bg-background/90 text-foreground backdrop-blur-md shadow-md group-hover:bg-background group-hover:text-foreground">
+                  <Layers className="size-5" />
+                </div>
+                <span className="absolute bottom-3 left-3 rounded-full bg-primary/90 px-3 py-1 text-[11px] font-black uppercase tracking-wider text-primary-foreground shadow-sm">
+                  CypCut & Lantek CAM
+                </span>
               </div>
-              <h3 className="text-lg font-extrabold text-foreground group-hover:text-background transition-colors">
-                CypCut & Lantek CNC CAM
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground group-hover:text-background/90 transition-colors">
-                CNC Fiber Laser cutting via CypCut, Lantek Expert turret punch nesting optimization, sheet metal scrap reduction, and shop floor G-code generation.
-              </p>
+              <div className="flex flex-1 flex-col p-6">
+                <h3 className="text-lg font-black text-foreground group-hover:text-background transition-colors">
+                  CypCut & Lantek CNC CAM
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground group-hover:text-background/90 transition-colors">
+                  CNC Fiber Laser cutting via CypCut, Lantek Expert turret punch nesting optimization, sheet metal scrap reduction, and shop floor G-code generation.
+                </p>
+              </div>
             </div>
           </Reveal>
         </div>
