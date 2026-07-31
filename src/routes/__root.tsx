@@ -83,14 +83,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Adaikalaraj Selvaraj | Mechanical Design Engineer & CNC Programmer" },
+      {
+        name: "description",
+        content:
+          "Results-driven Mechanical Design Engineer with 7+ years expertise in CAD/CAM, CNC Programming, Sheet Metal Design & HVAC Systems.",
+      },
+      { name: "author", content: "Adaikalaraj Selvaraj" },
+      { property: "og:title", content: "Adaikalaraj Selvaraj | Engineering Portfolio" },
+      {
+        property: "og:description",
+        content:
+          "7+ years expertise in Mechanical Design, CAD/CAM, CNC Programming, Sheet Metal Design & HVAC Systems.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
@@ -103,7 +110,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Manrope:wght@400..700&display=swap",
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
+      { rel: "alternate icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
   }),
   shellComponent: RootShell,
