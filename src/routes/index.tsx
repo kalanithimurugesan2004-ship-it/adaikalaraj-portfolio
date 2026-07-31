@@ -470,27 +470,34 @@ function Index() {
       </section>
 
       {/* About Section */}
-      <Section id="about" title="About Me" kicker="Background & Objectives">
-        <div className="grid items-center gap-8 lg:grid-cols-12">
-          <div className="space-y-4 lg:col-span-7">
-            <h3 className="text-2xl font-extrabold tracking-tight sm:text-4xl">
-              Engineering Concepts Into Production-Ready Manufacturing Solutions
+      <Section id="about" title="About Me" kicker="Background & Engineering Philosophy">
+        {/* Main Grid: Story + Highlights Grid */}
+        <div className="grid gap-8 lg:grid-cols-12 items-start">
+          {/* Left Column: Bio Narrative */}
+          <div className="lg:col-span-7 space-y-4">
+            <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3.5 py-1.5 text-xs font-bold text-primary">
+              <Sparkles className="size-3.5" /> Engineering Philosophy
+            </div>
+            <h3 className="text-2xl font-black tracking-tight sm:text-3xl lg:text-4xl text-foreground leading-tight">
+              Transforming Engineering Concepts Into Precision Production Solutions
             </h3>
             <p className="text-base sm:text-lg leading-relaxed text-muted-foreground">
-              I specialize in transforming complex engineering requirements into practical and efficient production outcomes. My work includes design development, CNC programming, fabrication drawing preparation, nesting and material optimization, BOM documentation, and seamless coordination with production and quality teams.
+              I specialize in bridging the gap between digital CAD design and physical sheet metal manufacturing. With over <strong>7+ years of hands-on industrial experience</strong> across UAE and India, I manage the end-to-end workflow—from 3D component modeling and 2D flat pattern development to advanced CNC nesting, BOM documentation, and shop floor quality compliance.
             </p>
             <p className="text-base sm:text-lg leading-relaxed text-muted-foreground">
-              My background combines design precision with manufacturing execution, helping companies reduce material waste, improve production speed, and maintain high standards of quality and compliance.
+              My core objective is optimizing production efficiency, minimizing raw material scrap, accelerating CNC machine cycle times, and ensuring every fabricated assembly meets strict tolerance standards.
             </p>
-            <div className="pt-3">
-              <p className="mb-3 text-xs font-bold uppercase tracking-widest text-muted-foreground">
-                Core Specializations
-              </p>
-              <div className="flex flex-wrap gap-2.5">
+
+            {/* Focus Pills */}
+            <div className="pt-2">
+              <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground block mb-2.5">
+                Key Specializations
+              </span>
+              <div className="flex flex-wrap gap-2">
                 {aboutPills.map((pill) => (
                   <span
                     key={pill}
-                    className="rounded-full bg-secondary px-4 py-2 text-sm font-semibold text-foreground transition-transform hover:scale-105"
+                    className="rounded-xl border border-border/80 bg-card px-3.5 py-1.5 text-xs sm:text-sm font-bold text-foreground shadow-2xs transition-all hover:border-foreground/40 hover:bg-secondary"
                   >
                     {pill}
                   </span>
@@ -499,29 +506,87 @@ function Index() {
             </div>
           </div>
 
-          <div className="lg:col-span-5">
-            <Reveal delay={100}>
-              <div className="rounded-3xl border border-border bg-card p-6 sm:p-7 shadow-sm">
-                <div className="flex items-center gap-3.5 border-b border-border pb-4">
-                  <div className="flex size-11 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
-                    <Briefcase className="size-5" />
-                  </div>
-                  <div>
-                    <h4 className="text-base font-extrabold">Current Designation</h4>
-                    <p className="text-sm font-medium text-muted-foreground">Metal Fascination LLC, Ajman</p>
-                  </div>
+          {/* Right Column: 4 Sleek Highlights Grid */}
+          <div className="lg:col-span-5 grid gap-3.5 sm:grid-cols-2">
+            <Reveal delay={60}>
+              <div className="h-full rounded-2xl border border-border bg-card p-5 shadow-2xs transition-all hover:border-foreground/30 hover:shadow-md">
+                <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10 text-primary mb-3">
+                  <Clock className="size-5" />
                 </div>
-                <div className="mt-4 space-y-2 text-sm sm:text-base leading-relaxed text-muted-foreground">
-                  <p className="font-bold text-foreground">
-                    Mechanical Design Engineer | Manufacturing Engineer | CNC Programmer
-                  </p>
-                  <p>
-                    Over 7+ years of hands-on industrial engineering expertise spanning sheet metal design, CAD/CAM drafting, CypCut & Lantek programming, and HVAC product development.
-                  </p>
+                <h4 className="text-2xl font-extrabold text-foreground">7+ Years</h4>
+                <p className="mt-1 text-xs font-semibold text-muted-foreground leading-snug">Industrial Engineering Experience in UAE & India</p>
+              </div>
+            </Reveal>
+
+            <Reveal delay={120}>
+              <div className="h-full rounded-2xl border border-border bg-card p-5 shadow-2xs transition-all hover:border-foreground/30 hover:shadow-md">
+                <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10 text-primary mb-3">
+                  <Briefcase className="size-5" />
                 </div>
+                <h4 className="text-2xl font-extrabold text-foreground">4 Companies</h4>
+                <p className="mt-1 text-xs font-semibold text-muted-foreground leading-snug">Metal Fascination, Speed Flow, Excel & Benchmark</p>
+              </div>
+            </Reveal>
+
+            <Reveal delay={180}>
+              <div className="h-full rounded-2xl border border-border bg-card p-5 shadow-2xs transition-all hover:border-foreground/30 hover:shadow-md">
+                <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10 text-primary mb-3">
+                  <Cpu className="size-5" />
+                </div>
+                <h4 className="text-2xl font-extrabold text-foreground">Multi-CAM</h4>
+                <p className="mt-1 text-xs font-semibold text-muted-foreground leading-snug">CypCut Laser & Lantek Expert CNC Programming</p>
+              </div>
+            </Reveal>
+
+            <Reveal delay={240}>
+              <div className="h-full rounded-2xl border border-border bg-card p-5 shadow-2xs transition-all hover:border-foreground/30 hover:shadow-md">
+                <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10 text-primary mb-3">
+                  <ShieldCheck className="size-5" />
+                </div>
+                <h4 className="text-2xl font-extrabold text-foreground">ISO & QA/QC</h4>
+                <p className="mt-1 text-xs font-semibold text-muted-foreground leading-snug">Quality inspection, DFM standards & BOM accuracy</p>
               </div>
             </Reveal>
           </div>
+        </div>
+
+        {/* 3 Core Pillars Cards Row */}
+        <div className="mt-10 grid gap-4 sm:grid-cols-3">
+          <Reveal delay={100}>
+            <div className="h-full rounded-3xl border border-border/80 bg-card p-6 shadow-2xs transition-all hover:border-foreground/40 hover:shadow-lg">
+              <div className="flex size-11 items-center justify-center rounded-2xl bg-secondary text-foreground mb-4">
+                <Layers className="size-5" />
+              </div>
+              <h4 className="text-base font-extrabold text-foreground">Sheet Metal & DFM</h4>
+              <p className="mt-2 text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                Design of HVAC ducts, cladding panels, structural brackets, and complex sheet-metal enclosures with accurate bend deductions.
+              </p>
+            </div>
+          </Reveal>
+
+          <Reveal delay={180}>
+            <div className="h-full rounded-3xl border border-border/80 bg-card p-6 shadow-2xs transition-all hover:border-foreground/40 hover:shadow-lg">
+              <div className="flex size-11 items-center justify-center rounded-2xl bg-secondary text-foreground mb-4">
+                <Zap className="size-5" />
+              </div>
+              <h4 className="text-base font-extrabold text-foreground">CNC Programming</h4>
+              <p className="mt-2 text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                Generating optimized G-code, automatic nesting, and lead-in/lead-out parameters for fiber laser and CNC punch press machines.
+              </p>
+            </div>
+          </Reveal>
+
+          <Reveal delay={260}>
+            <div className="h-full rounded-3xl border border-border/80 bg-card p-6 shadow-2xs transition-all hover:border-foreground/40 hover:shadow-lg">
+              <div className="flex size-11 items-center justify-center rounded-2xl bg-secondary text-foreground mb-4">
+                <TrendingUp className="size-5" />
+              </div>
+              <h4 className="text-base font-extrabold text-foreground">Shopfloor & Scrap Control</h4>
+              <p className="mt-2 text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                Collaborating with assembly teams to streamline manufacturing workflows, reduce raw material scrap, and enforce QA standards.
+              </p>
+            </div>
+          </Reveal>
         </div>
       </Section>
 
