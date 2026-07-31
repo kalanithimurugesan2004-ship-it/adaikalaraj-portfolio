@@ -155,9 +155,10 @@
   position: relative;
   overflow: hidden;
   display: inline-flex;
-  items-center: center;
+  align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  white-space: nowrap;
   border-radius: 9999px;
   font-weight: 600;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -197,9 +198,10 @@
 .btn-luzia-secondary {
   position: relative;
   display: inline-flex;
-  items-center: center;
+  align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  white-space: nowrap;
   border-radius: 9999px;
   font-weight: 600;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);

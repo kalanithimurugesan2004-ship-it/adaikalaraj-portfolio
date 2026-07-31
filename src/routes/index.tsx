@@ -6,7 +6,6 @@ import {
   MapPin,
   Linkedin,
   MessageSquare,
-  Calendar,
   Award,
   CheckCircle2,
   ChevronDown,
@@ -17,13 +16,13 @@ import {
   Cpu,
   GraduationCap,
   Briefcase,
-  Copy,
-  Check,
   Zap,
-  Sparkles,
   ArrowRight,
   ShieldCheck,
   TrendingUp,
+  Calendar,
+  Sparkles,
+  Clock,
 } from "lucide-react";
 import { toast } from "sonner";
 import { Reveal } from "@/components/Reveal";
@@ -125,23 +124,89 @@ const softwareStack = [
     desc: "Fiber laser cutting and CNC support",
   },
   {
-    name: "Production Documentation (MS Office)",
+    name: "Creo & Pro-E",
+    level: 85,
+    desc: "3D modelling, mechanism design & analysis",
+  },
+  {
+    name: "Production Documentation (MS Office & Tally)",
     level: 94,
-    desc: "Word, Excel, PowerPoint for reports, BOM and coordination",
+    desc: "Excel reports, BOM, stock records and technical documentation",
   },
 ];
 
-const experienceBullets = [
-  "Design precision sheet-metal components and mechanical products using AutoCAD and SolidWorks.",
-  "Prepare fabrication, production, manufacturing, and assembly drawings.",
-  "Develop CNC programs for fiber laser and CNC turret punch machines using Lantek Expert.",
-  "Generate CNC laser cutting programs through CypCut.",
-  "Design HVAC sheet-metal systems, including AHU and FAHU-related components.",
-  "Perform estimation, nesting, and material optimization to reduce manufacturing cost.",
-  "Prepare BOMs, engineering documentation, and production records.",
-  "Coordinate with production, procurement, QA/QC, and sales teams.",
-  "Support process improvement, planning, and preventive maintenance activities.",
-  "Maintain compliance with drawings, customer specifications, and ISO documentation standards.",
+const workExperiences = [
+  {
+    step: 3,
+    stepLabel: "03",
+    company: "Metal Fascination L.L.C",
+    location: "Ajman, United Arab Emirates",
+    years: "2019 – Present",
+    role: "CAD/CAM Engineer (AHU, FAHU, HVAC)",
+    subRole: "Mechanical Design Engineer | CNC Programmer",
+    bullets: [
+      "Design precision sheet-metal components and mechanical products using AutoCAD and SolidWorks.",
+      "Prepare fabrication, production, manufacturing, and assembly drawings for shop-floor execution.",
+      "Develop CNC programs for fiber laser and CNC turret punch machines using Lantek Expert.",
+      "Generate CNC laser cutting programs through CypCut for efficient shop-floor production.",
+      "Design HVAC sheet-metal systems, including AHU and FAHU-related components.",
+      "Perform estimation, nesting, and material optimization to reduce manufacturing cost and sheet waste.",
+      "Prepare BOMs (Bill of Materials), engineering documentation, and production records.",
+      "Coordinate seamlessly with production, procurement, QA/QC, and sales engineering teams.",
+    ],
+  },
+  {
+    step: 2,
+    stepLabel: "02",
+    company: "Glazier Tehno Casting PVT LTD",
+    location: "Coimbatore, India",
+    years: "2017 – 2018",
+    role: "Quality Assurance (QA) Department Engineer",
+    subRole: "Inspection & Quality Control Specialist",
+    bullets: [
+      "Conducted quality inspection of precision casting components, dimensional verification, and tolerance checking.",
+      "Monitored casting defects, root-cause analysis, and compliance with strict quality control standards.",
+      "Prepared QA/QC documentation, inspection records, and initial sample inspection reports (ISIR).",
+      "Coordinated with foundry production and machining teams to maintain zero-defect standards.",
+    ],
+  },
+  {
+    step: 1,
+    stepLabel: "01",
+    company: "Hyundai Motor India Limited",
+    location: "Chennai, India",
+    years: "2013 – 2014",
+    role: "PDI - Pre-Delivery Inspector",
+    subRole: "Automotive Quality & Inspection Inspector",
+    bullets: [
+      "Conducted comprehensive pre-delivery inspection (PDI) on manufactured vehicles and automotive assemblies.",
+      "Verified mechanical alignment, paint finish, electrical circuitry, and safety compliance prior to final dispatch.",
+      "Documented non-conformance logs and coordinated with assembly line quality supervisors to resolve defects.",
+    ],
+  },
+];
+
+const engineeringProjects = [
+  {
+    title: "Automatic Feeding & Cutting Machine using Geneva Mechanism",
+    type: "Engineering Main Project",
+    desc: "Designed and fabricated an automated workpiece feeding and cutting system utilizing Geneva mechanism kinematics for precise index motion.",
+  },
+  {
+    title: "Air Assistant Exhaust Braking System",
+    type: "Diploma Main Project",
+    desc: "Developed a pneumatic exhaust braking control system for heavy vehicles to improve braking efficiency and engine retarding force.",
+  },
+  {
+    title: "Power Harvesting in Dam Outlet Water",
+    type: "Engineering Mini Project",
+    desc: "Designed a micro hydro-turbine mechanism to harvest renewable electrical energy from dam discharge water channels.",
+  },
+  {
+    title: "MSME Heat Assisted Solar Water Heater",
+    type: "Research Project (Proposed for MSME Funding)",
+    desc: "Participated in the design and development of an optimized solar thermal water heating system under MSME guidance.",
+  },
 ];
 
 const achievements = [
@@ -167,60 +232,76 @@ const capabilities = [
     id: "mechanical",
     title: "Mechanical Design & Manufacturing",
     desc: "Precision sheet-metal design, mechanical product development, fabrication drawings, assembly drawings, design for manufacturing (DFM), and BOM preparation.",
+    icon: Wrench,
   },
   {
     id: "cnc",
     title: "CNC Programming & Production",
     desc: "CNC fiber laser programming, CNC turret punch programming, machine setup support, CNC machining coordination, and process optimization.",
+    icon: Cpu,
   },
   {
     id: "production",
     title: "Production Engineering",
     desc: "Production planning, estimation, cost analysis, nesting optimization, stainless-steel fabrication, and commercial kitchen equipment design.",
+    icon: Layers,
   },
   {
     id: "quality",
-    title: "Quality Systems",
-    desc: "QA/QC coordination, ISO documentation, process standardization, drawing compliance, and production inspection support.",
+    title: "Quality Systems & Inspection",
+    desc: "QA/QC coordination, pre-delivery inspection (PDI), casting quality control, ISO documentation, process standardization, and drawing compliance.",
+    icon: ShieldCheck,
   },
 ];
 
 const education = [
   {
     degree: "BE in Mechanical Engineering",
-    school: "Hindusthan College of Engineering and Technology",
+    school: "Hindusthan College of Engineering and Technology, Coimbatore",
     years: "2013 – 2017",
-    note: "Focused on mechanical design, thermodynamics and industrial automation. Grade: 7.0 / 10",
+    note: "Focused on mechanical design, thermodynamics and industrial automation. Grade: CGPA 7.04 / 10",
   },
   {
     degree: "Diploma in Automobile Engineering",
-    school: "Thanthai Rover Institute of Polytechnic",
+    school: "Thanthai Rover Institute of Polytechnic College, Perambalur",
     years: "2011 – 2013",
-    note: "Foundation in technical systems, automobile engineering fundamentals and mechanical control.",
+    note: "Foundation in technical systems, automobile engineering fundamentals and mechanical control. Grade: 86.54%",
+  },
+  {
+    degree: "Higher Secondary Certificate (HSC)",
+    school: "Sri Ragavendra Matriculation Higher Secondary School, Veeraganur",
+    years: "2011",
+    note: "Score: 65%",
+  },
+  {
+    degree: "Secondary School Leaving Certificate (SSLC)",
+    school: "Sri Ragavendra Matriculation Higher Secondary School, Veeraganur",
+    years: "2009",
+    note: "Score: 70%",
   },
 ];
 
 const certifications = [
-  "PG Diploma in Industrial Robotics & Automation",
-  "PRO-E Design & Two-Wheeler Mechanism Training — CIICP, Chennai",
+  "PGDIRA & PG Diploma in Industrial Robotics Automation — Technocrat Automation, Chennai",
+  "PRO-E Design & Two-Wheeler Mechanism — Canada India Institutional Co-operation Project (CIICP), Chennai",
+  "Advanced AutoCAD 2D & 3D Drafting Certificate",
+  "Communication Skills Certificate — Sri Anu Institute, Coimbatore",
+  "Workshop: Design & Development of Jigs and Fixtures for Advanced Manufacturing — KPR Institute",
 ];
 
 const languages = ["English", "Hindi", "Tamil", "Malayalam", "Telugu"];
 
 const navItems = [
   { id: "about", label: "About" },
-  { id: "skills", label: "Skills" },
   { id: "experience", label: "Experience" },
-  { id: "capabilities", label: "Capabilities" },
-  { id: "education", label: "Education" },
   { id: "contact", label: "Contact" },
 ];
 
 function Index() {
   const [active, setActive] = useState("about");
   const [scrolled, setScrolled] = useState(false);
-  const [copied, setCopied] = useState(false);
   const [activeAccordion, setActiveAccordion] = useState<string>("mechanical");
+  const [hoveredStep, setHoveredStep] = useState<number | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -251,17 +332,6 @@ function Index() {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
-  const copyLink = async () => {
-    try {
-      await navigator.clipboard.writeText(window.location.href);
-      setCopied(true);
-      toast.success("Link copied to clipboard");
-      setTimeout(() => setCopied(false), 2000);
-    } catch {
-      toast.error("Couldn't copy link");
-    }
-  };
-
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     toast.success("Thank you for your message! Adaikalaraj will get back to you shortly.");
@@ -278,80 +348,61 @@ function Index() {
             : "border-transparent bg-background/40 backdrop-blur-sm"
         }`}
       >
-        <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
+        <nav className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-4">
           <button
             type="button"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="flex items-center gap-2 text-left font-display text-lg font-bold tracking-tight transition-opacity hover:opacity-80"
+            className="flex shrink-0 items-center gap-2 text-left font-display text-lg font-bold tracking-tight whitespace-nowrap transition-opacity hover:opacity-80"
           >
-            <span className="flex size-9 items-center justify-center rounded-xl bg-primary text-xs font-black text-primary-foreground shadow-sm">
+            <span className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-primary text-xs font-black text-primary-foreground shadow-sm">
               AS
             </span>
-            <span>
+            <span className="whitespace-nowrap">
               Adaikalaraj <strong className="font-extrabold text-foreground">Selvaraj</strong>
             </span>
           </button>
-          <div className="flex items-center gap-2 text-muted-foreground sm:gap-2.5">
+          <div className="flex items-center gap-1.5 text-muted-foreground sm:gap-2.5">
             {navItems.map((n) => (
               <button
                 key={n.id}
                 type="button"
                 onClick={() => scrollTo(n.id)}
-                className={`hidden rounded-full px-4 py-2 text-sm font-semibold transition-all duration-200 hover:bg-secondary hover:text-foreground md:inline-flex ${
+                className={`inline-flex whitespace-nowrap rounded-full px-3 py-1.5 text-xs font-semibold transition-all duration-200 hover:bg-secondary hover:text-foreground sm:px-4 sm:py-2 sm:text-sm ${
                   active === n.id ? "bg-secondary text-foreground shadow-xs" : ""
                 }`}
               >
                 {n.label}
               </button>
             ))}
-            <button
-              type="button"
-              onClick={copyLink}
-              aria-label="Copy link"
-              className="inline-flex size-10 items-center justify-center rounded-full border border-border transition-all hover:bg-secondary active:scale-95"
-            >
-              {copied ? <Check className="size-4 text-accent-foreground" /> : <Copy className="size-4" />}
-            </button>
-            <button
-              type="button"
-              onClick={() => scrollTo("contact")}
-              className="btn-luzia ml-1 bg-primary px-5 py-2.5 text-sm font-bold text-primary-foreground"
-            >
-              Hire / Contact
-            </button>
           </div>
         </nav>
       </header>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden px-5 pt-12 pb-16">
-        <div className="pointer-events-none absolute left-1/2 top-4 aura h-[500px] w-[600px] -translate-x-1/2 rounded-full opacity-80" />
+      <section className="relative overflow-hidden px-5 pt-6 pb-8">
+        <div className="pointer-events-none absolute left-1/2 top-2 aura h-[450px] w-[550px] -translate-x-1/2 rounded-full opacity-70" />
         <div className="relative mx-auto max-w-6xl">
-          <div className="grid items-center gap-8 lg:grid-cols-[1fr_500px]">
+          <div className="grid items-center gap-8 md:grid-cols-[1fr_460px] lg:grid-cols-[1fr_540px]">
             {/* Left Content */}
             <div className="animate-[fade-in_0.8s_ease-out_both] text-left">
-              <span className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/70 px-4 py-2 text-sm font-semibold text-muted-foreground backdrop-blur-xs">
-                <Sparkles className="size-4 text-accent-foreground" />
-                Professional Engineering Portfolio
-              </span>
-              <h1 className="mt-4 text-4xl font-black tracking-tight sm:text-6xl lg:text-7xl">
+              <h1 className="text-3xl font-black tracking-tight sm:text-5xl lg:text-6xl">
                 Adaikalaraj Selvaraj
               </h1>
-              <h2 className="mt-3 text-2xl font-bold text-muted-foreground sm:text-3xl lg:text-4xl">
+              <h2 className="mt-2 text-xl font-bold text-muted-foreground sm:text-2xl lg:text-3xl">
                 Mechanical Design Engineer | Manufacturing Engineer | CNC Programmer
               </h2>
-              <p className="mt-6 text-lg leading-relaxed text-muted-foreground sm:text-xl">
+              <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
                 Results-driven Mechanical Design Engineer with <strong>7+ years</strong> of
                 manufacturing-focused expertise in sheet-metal design, CAD/CAM engineering, CNC
                 programming, fabrication documentation, production planning, and HVAC-related sheet-metal systems.
               </p>
 
               {/* Badges */}
-              <div className="mt-6 flex flex-wrap gap-2.5">
+              <div className="mt-4 flex flex-wrap gap-2">
                 {heroBadges.map((badge) => (
                   <span
                     key={badge}
-                    className="rounded-full border border-border bg-card px-4 py-1.5 text-sm font-semibold shadow-xs transition-colors hover:border-foreground/20"
+                    className="rounded-full border border-border bg-card px-3.5 py-1.5 text-xs sm:text-sm font-semibold shadow-xs transition-colors hover:border-foreground/20"
                   >
                     {badge}
                   </span>
@@ -359,71 +410,38 @@ function Index() {
               </div>
 
               {/* Actions */}
-              <div className="mt-8 flex flex-wrap gap-3.5">
+              <div className="mt-6 flex flex-wrap gap-3">
+                <a
+                  href="/Adaikalaraj_Selvaraj_Resume.pdf"
+                  download="Adaikalaraj_Selvaraj_Resume.pdf"
+                  className="btn-luzia group bg-primary px-6 py-3.5 text-sm sm:text-base font-bold text-primary-foreground inline-flex items-center gap-2"
+                >
+                  <FileText className="size-4.5" /> Download CV / Resume
+                </a>
                 <button
                   type="button"
                   onClick={() => scrollTo("contact")}
-                  className="btn-luzia group bg-primary px-7 py-3.5 text-base font-bold text-primary-foreground"
+                  className="btn-luzia-secondary border border-border bg-card px-6 py-3.5 text-sm sm:text-base font-bold hover:bg-secondary inline-flex items-center gap-2"
                 >
-                  Hire / Contact <ArrowRight className="size-4.5 transition-transform duration-300 group-hover:translate-x-1" />
+                  Hire / Contact <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </button>
                 <button
                   type="button"
                   onClick={() => scrollTo("experience")}
-                  className="btn-luzia-secondary border border-border bg-card px-7 py-3.5 text-base font-bold hover:bg-secondary"
+                  className="btn-luzia-secondary border border-border bg-card px-6 py-3.5 text-sm sm:text-base font-bold hover:bg-secondary"
                 >
                   View Experience
                 </button>
               </div>
-
-              {/* Quick Contact Cards */}
-              <div className="mt-10 grid grid-cols-2 gap-3.5 sm:grid-cols-4">
-                <div className="rounded-2xl border border-border bg-card/80 p-4 backdrop-blur-xs transition-all hover:border-foreground/20">
-                  <small className="flex items-center gap-1.5 text-xs font-semibold text-muted-foreground">
-                    <Phone className="size-4 text-accent-foreground" /> Phone
-                  </small>
-                  <strong className="mt-1.5 block truncate text-sm font-bold sm:text-base">
-                    <a href="tel:+971543351693" className="hover:underline">
-                      +971 54 335 1693
-                    </a>
-                  </strong>
-                </div>
-                <div className="rounded-2xl border border-border bg-card/80 p-4 backdrop-blur-xs transition-all hover:border-foreground/20">
-                  <small className="flex items-center gap-1.5 text-xs font-semibold text-muted-foreground">
-                    <Mail className="size-4 text-accent-foreground" /> Email
-                  </small>
-                  <strong className="mt-1.5 block truncate text-sm font-bold sm:text-base">
-                    <a href="mailto:adaikalaraj1993@gmail.com" className="hover:underline">
-                      adaikalaraj1993@gmail.com
-                    </a>
-                  </strong>
-                </div>
-                <div className="rounded-2xl border border-border bg-card/80 p-4 backdrop-blur-xs transition-all hover:border-foreground/20">
-                  <small className="flex items-center gap-1.5 text-xs font-semibold text-muted-foreground">
-                    <MapPin className="size-4 text-accent-foreground" /> Location
-                  </small>
-                  <strong className="mt-1.5 block truncate text-sm font-bold sm:text-base">
-                    Ajman, UAE
-                  </strong>
-                </div>
-                <div className="rounded-2xl border border-border bg-card/80 p-4 backdrop-blur-xs transition-all hover:border-foreground/20">
-                  <small className="flex items-center gap-1.5 text-xs font-semibold text-muted-foreground">
-                    <Calendar className="size-4 text-accent-foreground" /> DOB
-                  </small>
-                  <strong className="mt-1.5 block truncate text-sm font-bold sm:text-base">
-                    27 April 1993
-                  </strong>
-                </div>
-              </div>
             </div>
 
-            {/* Right Visual Image - Prominent Large Portrait */}
-            <div className="relative mx-auto flex w-full max-w-[520px] items-center justify-center pt-2">
-              <div className="relative w-full overflow-hidden [mask-image:linear-gradient(to_bottom,black_65%,transparent_95%)]">
+            {/* Right Visual Image - Extra Large Prominent Portrait */}
+            <div className="relative mx-auto flex w-full max-w-[560px] lg:max-w-[620px] items-center justify-center">
+              <div className="relative w-full overflow-hidden [mask-image:linear-gradient(to_bottom,black_75%,transparent_98%)]">
                 <img
                   src={heroPortrait}
                   alt="Adaikalaraj Selvaraj portrait"
-                  className="h-[520px] sm:h-[580px] lg:h-[640px] max-h-[85vh] w-full object-contain object-top transition-transform duration-700 hover:scale-[1.02]"
+                  className="h-[560px] sm:h-[620px] lg:h-[680px] max-h-[88vh] w-full object-contain object-top transition-transform duration-700 hover:scale-[1.02]"
                 />
               </div>
             </div>
@@ -432,7 +450,7 @@ function Index() {
       </section>
 
       {/* Stats Strip */}
-      <section className="border-y border-border bg-secondary/40 py-10">
+      <section className="border-y border-border bg-secondary/40 py-6">
         <div className="mx-auto max-w-6xl px-5">
           <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
             {stats.map((stat, i) => (
@@ -567,157 +585,437 @@ function Index() {
 
       {/* Professional Experience Section */}
       <Section id="experience" title="Professional Experience" kicker="Industrial Manufacturing">
-        <Reveal>
-          <article className="rounded-3xl border border-border bg-card p-6 sm:p-8 transition-all hover:shadow-md">
-            {/* Header */}
-            <div className="flex flex-col justify-between gap-4 border-b border-border pb-6 sm:flex-row sm:items-start">
-              <div>
-                <span className="inline-block rounded-full bg-accent/20 px-3 py-1 text-xs font-bold text-foreground">
-                  2019 – Present
-                </span>
-                <h3 className="mt-2 text-2xl font-extrabold">Metal Fascination LLC</h3>
-                <p className="text-sm font-medium text-muted-foreground">Ajman, United Arab Emirates</p>
+        <div className="space-y-6">
+          {/* Interactive Year Timeline Stepper Bar */}
+        <div className="mb-8 rounded-3xl border border-border bg-card/80 p-4 sm:p-6 backdrop-blur-sm shadow-xs transition-all">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-border/60 pb-4 mb-4">
+            <div className="flex items-center gap-2.5">
+              <div className="flex size-8 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                <Calendar className="size-4" />
               </div>
-              <div className="text-left sm:text-right">
-                <h4 className="text-sm font-bold text-foreground">
-                  Mechanical Design Engineer | Manufacturing Engineer
-                </h4>
-                <p className="text-xs text-muted-foreground">CAD/CAM Engineer | CNC Programmer</p>
+              <div>
+                <h4 className="text-sm font-bold text-foreground">Interactive Career Timeline</h4>
+                <p className="text-xs text-muted-foreground">Hover over any year to highlight career sequence in order</p>
               </div>
             </div>
+            {hoveredStep !== null && (
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/15 border border-primary/20 px-3 py-1 text-xs font-bold text-foreground animate-fade-in">
+                <Sparkles className="size-3.5 text-primary" />
+                Order Highlighting: Steps 1 to {hoveredStep}
+              </span>
+            )}
+          </div>
 
-            {/* Responsibilities list */}
-            <div className="mt-6">
-              <h4 className="mb-4 text-xs font-bold uppercase tracking-widest text-muted-foreground">
-                Key Responsibilities & Contributions
-              </h4>
-              <div className="grid gap-4 sm:grid-cols-2">
-                {experienceBullets.map((bullet, i) => (
-                  <div key={i} className="flex gap-3 text-sm sm:text-base leading-relaxed text-muted-foreground">
-                    <CheckCircle2 className="mt-1 size-4.5 shrink-0 text-accent-foreground" />
-                    <span>{bullet}</span>
+          {/* Year Navigation Pills arranged chronologically Step 1 -> Step 2 -> Step 3 */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            {[...workExperiences]
+              .sort((a, b) => a.step - b.step)
+              .map((exp) => {
+                const isStepActive = hoveredStep !== null && exp.step <= hoveredStep;
+                const isExactTarget = hoveredStep === exp.step;
+                return (
+                  <button
+                    key={exp.company}
+                    type="button"
+                    onMouseEnter={() => setHoveredStep(exp.step)}
+                    onMouseLeave={() => setHoveredStep(null)}
+                    onClick={() => {
+                      setHoveredStep(exp.step);
+                      document
+                        .getElementById(`exp-card-${exp.step}`)
+                        ?.scrollIntoView({ behavior: "smooth", block: "center" });
+                    }}
+                    className={`group relative flex flex-col items-start p-3.5 rounded-2xl border text-left transition-all duration-300 cursor-pointer ${
+                      isExactTarget
+                        ? "border-primary bg-primary/10 shadow-md ring-2 ring-primary/30 scale-[1.02]"
+                        : isStepActive
+                        ? "border-accent bg-accent/20 shadow-xs"
+                        : "border-border bg-secondary/30 hover:border-foreground/30 hover:bg-secondary/60"
+                    }`}
+                  >
+                    <div className="flex w-full items-center justify-between gap-2">
+                      <span
+                        className={`inline-flex items-center justify-center rounded-full px-2.5 py-0.5 text-[11px] font-black transition-colors ${
+                          isExactTarget
+                            ? "bg-primary text-primary-foreground"
+                            : isStepActive
+                            ? "bg-foreground text-background"
+                            : "bg-muted text-muted-foreground"
+                        }`}
+                      >
+                        STEP {exp.stepLabel}
+                      </span>
+                      <span
+                        className={`text-xs font-bold transition-colors ${
+                          isExactTarget ? "text-foreground font-extrabold" : "text-muted-foreground"
+                        }`}
+                      >
+                        {exp.years}
+                      </span>
+                    </div>
+
+                    <h5 className="mt-2 text-sm font-extrabold text-foreground line-clamp-1 group-hover:text-primary transition-colors">
+                      {exp.company}
+                    </h5>
+                    <p className="text-[11px] font-medium text-muted-foreground line-clamp-1">
+                      {exp.role}
+                    </p>
+
+                    {/* Sequential Progress Line */}
+                    <div className="mt-3 w-full bg-border/60 h-1.5 rounded-full overflow-hidden">
+                      <div
+                        className={`h-full transition-all duration-500 rounded-full ${
+                          isExactTarget
+                            ? "w-full bg-primary"
+                            : isStepActive
+                            ? "w-full bg-foreground/80"
+                            : "w-0 bg-transparent"
+                        }`}
+                      />
+                    </div>
+                  </button>
+                );
+              })}
+          </div>
+        </div>
+
+        {/* Experience Cards List with Order-Wise Highlighting */}
+        <div className="space-y-6">
+          {workExperiences.map((exp, expIdx) => {
+            const isStepActive = hoveredStep !== null && exp.step <= hoveredStep;
+            const isExactTarget = hoveredStep === exp.step;
+            return (
+              <Reveal key={exp.company} delay={expIdx * 80}>
+                <article
+                  id={`exp-card-${exp.step}`}
+                  onMouseEnter={() => setHoveredStep(exp.step)}
+                  onMouseLeave={() => setHoveredStep(null)}
+                  className={`group relative rounded-3xl border p-6 sm:p-8 transition-all duration-300 ${
+                    isExactTarget
+                      ? "border-primary bg-card shadow-xl ring-2 ring-primary/20 scale-[1.01]"
+                      : isStepActive
+                      ? "border-primary/50 bg-card shadow-md ring-1 ring-primary/20"
+                      : "border-border bg-card hover:border-foreground/30 hover:shadow-md"
+                  }`}
+                >
+                  {/* Step Order Badge & Year */}
+                  <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+                    <span
+                      className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-black tracking-wider transition-all duration-300 ${
+                        isExactTarget
+                          ? "bg-primary text-primary-foreground shadow-xs ring-2 ring-primary/30"
+                          : isStepActive
+                          ? "bg-foreground text-background"
+                          : "bg-muted text-muted-foreground"
+                      }`}
+                    >
+                      <span className={`size-2 rounded-full ${isExactTarget ? "bg-primary-foreground animate-ping" : "bg-current"}`} />
+                      ORDER STEP {exp.stepLabel} / 03
+                    </span>
+                    <span
+                      className={`rounded-full px-3.5 py-1 text-xs font-extrabold transition-colors ${
+                        isExactTarget
+                          ? "bg-primary/20 text-foreground"
+                          : isStepActive
+                          ? "bg-accent/30 text-foreground"
+                          : "bg-primary/10 text-foreground"
+                      }`}
+                    >
+                      {exp.years}
+                    </span>
+                  </div>
+
+                  {/* Header */}
+                  <div className="flex flex-col justify-between gap-4 border-b border-border pb-6 sm:flex-row sm:items-start">
+                    <div>
+                      <h3 className="text-2xl font-extrabold text-foreground group-hover:text-primary transition-colors">
+                        {exp.company}
+                      </h3>
+                      <p className="text-sm font-medium text-muted-foreground flex items-center gap-1.5 mt-1">
+                        <MapPin className="size-3.5 text-muted-foreground" />
+                        {exp.location}
+                      </p>
+                    </div>
+                    <div className="text-left sm:text-right">
+                      <h4 className="text-base font-bold text-foreground">{exp.role}</h4>
+                      <p className="text-xs font-semibold text-muted-foreground">{exp.subRole}</p>
+                    </div>
+                  </div>
+
+                  {/* Responsibilities list */}
+                  <div className="mt-6">
+                    <h4 className="mb-4 text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-2">
+                      <span>Key Responsibilities & Quality Scope</span>
+                      {isExactTarget && (
+                        <span className="text-[10px] lowercase font-semibold bg-primary/10 text-primary px-2.5 py-0.5 rounded-full border border-primary/20">
+                          active target
+                        </span>
+                      )}
+                      {isStepActive && !isExactTarget && (
+                        <span className="text-[10px] lowercase font-semibold bg-secondary text-muted-foreground px-2 py-0.5 rounded-full">
+                          in sequence
+                        </span>
+                      )}
+                    </h4>
+                    <div className="grid gap-3.5 sm:grid-cols-2">
+                      {exp.bullets.map((bullet, i) => (
+                        <div key={i} className="flex gap-3 text-sm sm:text-base leading-relaxed text-muted-foreground">
+                          <CheckCircle2
+                            className={`mt-1 size-4.5 shrink-0 transition-colors ${
+                              isExactTarget
+                                ? "text-primary"
+                                : isStepActive
+                                ? "text-foreground"
+                                : "text-accent-foreground"
+                            }`}
+                          />
+                          <span>{bullet}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </article>
+              </Reveal>
+            );
+          })}
+        </div>
+
+          {/* Key Achievements */}
+          <div className="grid gap-4 sm:grid-cols-3 pt-2">
+            {achievements.map((ach) => {
+              const Icon = ach.icon;
+              return (
+                <div
+                  key={ach.title}
+                  className="rounded-2xl border border-border bg-secondary/30 p-5 transition-all hover:border-foreground/20 hover:bg-secondary/60"
+                >
+                  <Icon className="size-6 text-accent-foreground" />
+                  <h5 className="mt-2.5 font-bold text-base text-foreground">{ach.title}</h5>
+                  <p className="mt-1 text-sm text-muted-foreground">{ach.desc}</p>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Engineering Projects Card */}
+          <Reveal delay={200}>
+            <div className="rounded-3xl border border-border bg-card p-6 sm:p-8 mt-6">
+              <div className="flex items-center gap-3 border-b border-border pb-4">
+                <div className="flex size-10 items-center justify-center rounded-xl bg-primary text-primary-foreground">
+                  <Briefcase className="size-5" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold">Key Engineering Projects & Research</h3>
+                  <p className="text-xs text-muted-foreground">Academic and MSME research projects executed</p>
+                </div>
+              </div>
+              <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                {engineeringProjects.map((proj) => (
+                  <div key={proj.title} className="rounded-2xl border border-border/80 bg-secondary/20 p-4">
+                    <span className="inline-block rounded-full bg-accent/20 px-3 py-1 text-[11px] font-bold text-foreground">
+                      {proj.type}
+                    </span>
+                    <h4 className="mt-2 text-base font-bold text-foreground">{proj.title}</h4>
+                    <p className="mt-1 text-xs text-muted-foreground leading-relaxed">{proj.desc}</p>
                   </div>
                 ))}
               </div>
             </div>
-
-            {/* Achievements Cards */}
-            <div className="mt-8 grid gap-4 sm:grid-cols-3">
-              {achievements.map((ach, i) => {
-                const Icon = ach.icon;
-                return (
-                  <div
-                    key={ach.title}
-                    className="rounded-2xl border border-border bg-secondary/30 p-5 transition-all hover:border-foreground/20 hover:bg-secondary/60"
-                  >
-                    <Icon className="size-6 text-accent-foreground" />
-                    <h5 className="mt-2.5 font-bold text-base text-foreground">{ach.title}</h5>
-                    <p className="mt-1 text-sm text-muted-foreground">{ach.desc}</p>
-                  </div>
-                );
-              })}
-            </div>
-          </article>
-        </Reveal>
+          </Reveal>
+        </div>
       </Section>
 
       {/* Technical Capabilities Section */}
       <Section id="capabilities" title="Technical Expertise" kicker="Focused Capabilities">
-        <div className="grid gap-4 md:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2">
           {capabilities.map((cap) => {
-            const isOpen = activeAccordion === cap.id;
+            const Icon = cap.icon;
             return (
-              <div
+              <article
                 key={cap.id}
-                className={`rounded-3xl border transition-all duration-300 ${
-                  isOpen
-                    ? "border-foreground/30 bg-card shadow-md"
-                    : "border-border bg-card/60 hover:border-border hover:bg-card"
-                }`}
+                className="group relative rounded-3xl border border-border bg-card p-6 sm:p-7 shadow-xs transition-all duration-300 hover:bg-foreground hover:text-background hover:border-foreground hover:shadow-2xl hover:scale-[1.015]"
               >
-                <button
-                  type="button"
-                  onClick={() => setActiveAccordion(isOpen ? "" : cap.id)}
-                  className="flex w-full items-center justify-between p-6 text-left"
-                >
-                  <h3 className="text-base font-bold sm:text-lg">{cap.title}</h3>
-                  <ChevronDown
-                    className={`size-5 shrink-0 transition-transform duration-300 ${
-                      isOpen ? "rotate-180 text-foreground" : "text-muted-foreground"
-                    }`}
-                  />
-                </button>
-                {isOpen && (
-                  <div className="px-6 pb-6 pt-0 text-sm sm:text-base leading-relaxed text-muted-foreground animate-[fade-in_0.3s_ease-out]">
-                    <p>{cap.desc}</p>
+                {/* Header with Icon and Title */}
+                <div className="flex items-center gap-3.5 border-b border-border/60 pb-4 group-hover:border-background/20 transition-colors">
+                  <div className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary group-hover:bg-background group-hover:text-foreground transition-colors">
+                    <Icon className="size-5" />
                   </div>
-                )}
-              </div>
+                  <h3 className="text-base font-extrabold sm:text-lg text-foreground group-hover:text-background transition-colors">
+                    {cap.title}
+                  </h3>
+                </div>
+
+                {/* Always Open Content */}
+                <div className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground group-hover:text-background/90 font-medium transition-colors">
+                  <p>{cap.desc}</p>
+                </div>
+              </article>
             );
           })}
         </div>
       </Section>
 
-      {/* Education & Certifications Section */}
+      {/* Education Section - Dedicated Single Column Layout */}
       <Section id="education" title="Education & Qualifications" kicker="Academic Foundation">
-        <div className="grid gap-6 lg:grid-cols-12">
-          {/* Degree Cards */}
-          <div className="space-y-4 lg:col-span-7">
-            {education.map((edu, i) => (
-              <Reveal key={edu.degree} delay={i * 80}>
-                <article className="rounded-3xl border border-border bg-card p-6 shadow-xs">
-                  <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                    {edu.years}
-                  </span>
-                  <h3 className="mt-1 text-lg font-bold">{edu.degree}</h3>
-                  <p className="text-xs font-medium text-muted-foreground">{edu.school}</p>
-                  <p className="mt-3 text-xs leading-relaxed text-muted-foreground">{edu.note}</p>
-                </article>
-              </Reveal>
-            ))}
-          </div>
-
-          {/* Certifications & Languages */}
-          <div className="space-y-4 lg:col-span-5">
-            <Reveal delay={120}>
-              <article className="rounded-3xl border border-border bg-card p-6 shadow-xs">
-                <div className="flex items-center gap-2 font-bold text-foreground">
-                  <Award className="size-5 text-accent-foreground" />
-                  <span>Certifications & Training</span>
+        <div className="space-y-6">
+          {/* BE Degree */}
+          <Reveal delay={0}>
+            <article className="group relative overflow-hidden rounded-3xl border-2 border-primary/30 bg-gradient-to-br from-card via-card to-primary/5 p-6 sm:p-8 shadow-md transition-all hover:border-primary hover:shadow-lg">
+              <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border/80 pb-5">
+                <div className="flex items-center gap-3.5">
+                  <div className="flex size-12 items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-sm">
+                    <GraduationCap className="size-6" />
+                  </div>
+                  <div>
+                    <span className="inline-block rounded-full bg-primary/10 px-3.5 py-1 text-xs font-black uppercase tracking-wider text-foreground">
+                      Bachelor's Degree • 2013 – 2017
+                    </span>
+                    <h3 className="mt-1.5 text-2xl sm:text-3xl font-black text-foreground group-hover:text-primary transition-colors">
+                      BE in Mechanical Engineering
+                    </h3>
+                  </div>
                 </div>
-                <ul className="mt-3 space-y-2 text-xs text-muted-foreground">
-                  {certifications.map((cert) => (
-                    <li key={cert} className="flex gap-2">
-                      <span className="mt-1 size-1.5 shrink-0 rounded-full bg-accent-foreground" />
-                      <span>{cert}</span>
-                    </li>
-                  ))}
-                </ul>
+                <span className="inline-flex items-center gap-1 rounded-full bg-primary px-4 py-1.5 text-xs sm:text-sm font-black text-primary-foreground shadow-xs">
+                  CGPA 7.04 / 10
+                </span>
+              </div>
+              <div className="mt-5 space-y-2">
+                <p className="text-sm font-bold text-muted-foreground flex items-center gap-2">
+                  <MapPin className="size-4 text-primary" />
+                  Hindusthan College of Engineering and Technology, Coimbatore
+                </p>
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  Focused on mechanical design, thermodynamics, fluid dynamics, CAD/CAM integration, and industrial automation.
+                </p>
+              </div>
+            </article>
+          </Reveal>
+
+          {/* Diploma */}
+          <Reveal delay={80}>
+            <article className="group relative overflow-hidden rounded-3xl border border-accent/50 bg-gradient-to-br from-card via-card to-accent/10 p-6 sm:p-8 shadow-xs transition-all hover:border-accent hover:shadow-md">
+              <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border/80 pb-5">
+                <div className="flex items-center gap-3.5">
+                  <div className="flex size-11 items-center justify-center rounded-2xl bg-accent text-accent-foreground shadow-xs">
+                    <Award className="size-6" />
+                  </div>
+                  <div>
+                    <span className="inline-block rounded-full bg-accent/20 px-3.5 py-1 text-xs font-extrabold uppercase tracking-wider text-foreground">
+                      Technical Diploma • 2011 – 2013
+                    </span>
+                    <h3 className="mt-1 text-xl sm:text-2xl font-bold text-foreground">
+                      Diploma in Automobile Engineering
+                    </h3>
+                  </div>
+                </div>
+                <span className="inline-flex items-center rounded-full bg-accent/30 px-4 py-1.5 text-xs sm:text-sm font-bold text-foreground">
+                  86.54% Distinction
+                </span>
+              </div>
+              <div className="mt-5 space-y-2">
+                <p className="text-sm font-bold text-muted-foreground flex items-center gap-2">
+                  <MapPin className="size-4 text-accent-foreground" />
+                  Thanthai Rover Institute of Polytechnic College, Perambalur
+                </p>
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  Foundation in automotive kinematics, mechanical control systems, engine design, and shop-floor manufacturing fundamentals.
+                </p>
+              </div>
+            </article>
+          </Reveal>
+
+          {/* High School & Secondary Foundation (HSC & SSLC) */}
+          <div className="grid gap-6 sm:grid-cols-2">
+            <Reveal delay={140}>
+              <article className="rounded-3xl border border-border bg-card p-6 transition-all hover:border-foreground/30 hover:shadow-md">
+                <div className="flex items-center justify-between gap-2 border-b border-border/60 pb-3">
+                  <span className="rounded-full bg-secondary px-3 py-1 text-xs font-extrabold text-muted-foreground uppercase">
+                    HSC • 2011
+                  </span>
+                  <span className="text-xs font-extrabold text-foreground bg-primary/10 px-3 py-1 rounded-full">
+                    Score: 65%
+                  </span>
+                </div>
+                <h4 className="mt-3.5 text-base font-bold text-foreground">Higher Secondary Certificate (HSC)</h4>
+                <p className="mt-1 text-xs text-muted-foreground">
+                  Sri Ragavendra Matric Higher Sec School, Veeraganur
+                </p>
               </article>
             </Reveal>
 
             <Reveal delay={180}>
-              <article className="rounded-3xl border border-border bg-card p-6 shadow-xs">
-                <div className="flex items-center gap-2 font-bold text-foreground">
-                  <GraduationCap className="size-5 text-accent-foreground" />
-                  <span>Languages & Communication</span>
+              <article className="rounded-3xl border border-border bg-card p-6 transition-all hover:border-foreground/30 hover:shadow-md">
+                <div className="flex items-center justify-between gap-2 border-b border-border/60 pb-3">
+                  <span className="rounded-full bg-secondary px-3 py-1 text-xs font-extrabold text-muted-foreground uppercase">
+                    SSLC • 2009
+                  </span>
+                  <span className="text-xs font-extrabold text-foreground bg-primary/10 px-3 py-1 rounded-full">
+                    Score: 70%
+                  </span>
                 </div>
-                <p className="mt-2 text-xs text-muted-foreground">
-                  Professional workplace communication across multicultural engineering environments:
+                <h4 className="mt-3.5 text-base font-bold text-foreground">Secondary School Leaving Certificate (SSLC)</h4>
+                <p className="mt-1 text-xs text-muted-foreground">
+                  Sri Ragavendra Matric Higher Sec School, Veeraganur
                 </p>
-                <div className="mt-3 flex flex-wrap gap-2">
-                  {languages.map((lang) => (
-                    <span
-                      key={lang}
-                      className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-foreground"
-                    >
-                      {lang}
-                    </span>
-                  ))}
-                </div>
               </article>
             </Reveal>
           </div>
+        </div>
+      </Section>
+
+      {/* Certifications & Languages Section - Dedicated Section */}
+      <Section id="certifications" title="Certifications & Languages" kicker="Professional Credentials">
+        <div className="grid gap-6 md:grid-cols-2 items-start">
+          {/* Certifications Card */}
+          <Reveal delay={100}>
+            <article className="rounded-3xl border border-border bg-card p-6 sm:p-8 shadow-xs transition-all hover:shadow-md h-full">
+              <div className="flex items-center gap-3.5 border-b border-border pb-5">
+                <div className="flex size-11 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                  <Award className="size-6" />
+                </div>
+                <div>
+                  <h3 className="text-lg sm:text-xl font-bold text-foreground">Industrial Certifications & Training</h3>
+                  <p className="text-xs text-muted-foreground">Workshops, CAD/CAM training & domain certifications</p>
+                </div>
+              </div>
+              <ul className="mt-5 space-y-3 text-xs sm:text-sm text-muted-foreground">
+                {certifications.map((cert) => (
+                  <li key={cert} className="flex gap-3 leading-relaxed">
+                    <CheckCircle2 className="mt-0.5 size-4.5 shrink-0 text-accent-foreground" />
+                    <span>{cert}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          </Reveal>
+
+          {/* Languages Card */}
+          <Reveal delay={160}>
+            <article className="rounded-3xl border border-border bg-card p-6 sm:p-8 shadow-xs transition-all hover:shadow-md h-full">
+              <div className="flex items-center gap-3.5 border-b border-border pb-5">
+                <div className="flex size-11 items-center justify-center rounded-2xl bg-accent/20 text-foreground">
+                  <GraduationCap className="size-6" />
+                </div>
+                <div>
+                  <h3 className="text-lg sm:text-xl font-bold text-foreground">Languages & Communication</h3>
+                  <p className="text-xs text-muted-foreground">Multicultural engineering environment fluency</p>
+                </div>
+              </div>
+              <p className="mt-5 text-xs sm:text-sm leading-relaxed text-muted-foreground">
+                Fluent in technical and workplace communication across UAE and Indian industrial manufacturing teams:
+              </p>
+              <div className="mt-5 flex flex-wrap gap-2.5">
+                {languages.map((lang) => (
+                  <span
+                    key={lang}
+                    className="rounded-full border border-border bg-secondary/60 px-4 py-2 text-xs sm:text-sm font-semibold text-foreground transition-all hover:border-foreground/30 hover:bg-secondary"
+                  >
+                    {lang}
+                  </span>
+                ))}
+              </div>
+            </article>
+          </Reveal>
         </div>
       </Section>
 
@@ -784,6 +1082,22 @@ function Index() {
                   <strong className="text-sm font-semibold">Ajman, United Arab Emirates</strong>
                 </div>
               </div>
+
+              <a
+                href="/Adaikalaraj_Selvaraj_Resume.pdf"
+                download="Adaikalaraj_Selvaraj_Resume.pdf"
+                className="flex items-center gap-4 rounded-2xl border border-primary/30 bg-primary/10 p-4 transition-all hover:bg-primary/20 hover:shadow-xs group"
+              >
+                <div className="flex size-10 items-center justify-center rounded-xl bg-primary text-primary-foreground">
+                  <FileText className="size-5" />
+                </div>
+                <div>
+                  <small className="block text-xs font-bold text-primary">Download Document</small>
+                  <strong className="text-sm font-bold text-foreground group-hover:underline">
+                    Adaikalaraj_Selvaraj_Resume.pdf
+                  </strong>
+                </div>
+              </a>
             </div>
           </div>
 
@@ -914,14 +1228,14 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section id={id} className="mx-auto max-w-6xl scroll-mt-24 px-5 py-16">
+    <section id={id} className="mx-auto max-w-6xl scroll-mt-24 px-5 py-10">
       <Reveal>
-        <div className="mb-10 flex flex-col gap-1 border-b border-border/60 pb-4 sm:flex-row sm:items-end sm:justify-between">
+        <div className="mb-6 flex flex-col gap-1 border-b border-border/60 pb-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <span className="text-sm font-bold uppercase tracking-widest text-accent-foreground">
+            <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-accent-foreground">
               {kicker}
             </span>
-            <h2 className="text-3xl font-black tracking-tight sm:text-5xl">{title}</h2>
+            <h2 className="text-2xl font-black tracking-tight sm:text-4xl">{title}</h2>
           </div>
         </div>
       </Reveal>
