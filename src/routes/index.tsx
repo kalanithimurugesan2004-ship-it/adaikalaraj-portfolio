@@ -339,35 +339,35 @@ function Index() {
   };
 
   return (
-    <main className="min-h-screen scroll-smooth bg-background text-foreground selection:bg-accent selection:text-foreground">
+    <main className="min-h-screen w-full max-w-full overflow-x-hidden scroll-smooth bg-background text-foreground selection:bg-accent selection:text-foreground">
       {/* Sticky Header */}
       <header
-        className={`sticky top-0 z-40 border-b transition-all duration-300 ${
+        className={`sticky top-0 z-40 w-full max-w-full border-b transition-all duration-300 ${
           scrolled
-            ? "border-border bg-background/85 shadow-sm backdrop-blur-md"
-            : "border-transparent bg-background/40 backdrop-blur-sm"
+            ? "border-border bg-background/90 shadow-sm backdrop-blur-md"
+            : "border-transparent bg-background/60 backdrop-blur-sm"
         }`}
       >
-        <nav className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-4">
+        <nav className="mx-auto flex max-w-6xl items-center justify-between gap-2 px-3 py-3 sm:px-5 sm:py-4">
           <button
             type="button"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="flex shrink-0 items-center gap-2 text-left font-display text-lg font-bold tracking-tight whitespace-nowrap transition-opacity hover:opacity-80"
+            className="flex shrink-0 items-center gap-2 text-left font-display text-base sm:text-lg font-bold tracking-tight whitespace-nowrap transition-opacity hover:opacity-80"
           >
-            <span className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-primary text-xs font-black text-primary-foreground shadow-sm">
+            <span className="flex size-8 sm:size-9 shrink-0 items-center justify-center rounded-xl bg-primary text-xs font-black text-primary-foreground shadow-sm">
               AS
             </span>
             <span className="whitespace-nowrap">
-              Adaikalaraj <strong className="font-extrabold text-foreground">Selvaraj</strong>
+              Adaikalaraj <span className="hidden sm:inline font-extrabold text-foreground">Selvaraj</span>
             </span>
           </button>
-          <div className="flex items-center gap-1.5 text-muted-foreground sm:gap-2.5">
+          <div className="flex shrink-0 items-center gap-1 sm:gap-2.5 text-muted-foreground">
             {navItems.map((n) => (
               <button
                 key={n.id}
                 type="button"
                 onClick={() => scrollTo(n.id)}
-                className={`inline-flex whitespace-nowrap rounded-full px-3 py-1.5 text-xs font-semibold transition-all duration-200 hover:bg-secondary hover:text-foreground sm:px-4 sm:py-2 sm:text-sm ${
+                className={`inline-flex whitespace-nowrap rounded-full px-2.5 py-1 text-xs font-semibold transition-all duration-200 hover:bg-secondary hover:text-foreground sm:px-4 sm:py-2 sm:text-sm ${
                   active === n.id ? "bg-secondary text-foreground shadow-xs" : ""
                 }`}
               >
@@ -1178,38 +1178,38 @@ function Index() {
       </footer>
 
       {/* Floating Action Bar */}
-      <div className="fixed bottom-6 right-6 z-50 flex items-center gap-2">
+      <div className="fixed bottom-4 right-3 sm:bottom-6 sm:right-6 z-50 flex items-center gap-1.5 sm:gap-2 max-w-[calc(100vw-24px)]">
         <a
           href="https://wa.me/971543351693"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="WhatsApp"
-          className="btn-luzia-secondary flex size-11 items-center justify-center rounded-full bg-emerald-600 text-white shadow-lg transition-all duration-300 hover:scale-110 active:scale-95"
+          className="btn-luzia-secondary flex size-10 sm:size-11 items-center justify-center rounded-full bg-emerald-600 text-white shadow-lg transition-all duration-300 hover:scale-110 active:scale-95"
         >
-          <MessageSquare className="size-5" />
+          <MessageSquare className="size-4.5 sm:size-5" />
         </a>
         <a
           href="mailto:adaikalaraj1993@gmail.com"
           aria-label="Email"
-          className="btn-luzia-secondary flex size-11 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg transition-all duration-300 hover:scale-110 active:scale-95"
+          className="btn-luzia-secondary flex size-10 sm:size-11 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg transition-all duration-300 hover:scale-110 active:scale-95"
         >
-          <Mail className="size-5" />
+          <Mail className="size-4.5 sm:size-5" />
         </a>
         <a
           href="tel:+971543351693"
           aria-label="Call"
-          className="btn-luzia-secondary flex size-11 items-center justify-center rounded-full bg-blue-600 text-white shadow-lg transition-all duration-300 hover:scale-110 active:scale-95"
+          className="btn-luzia-secondary flex size-10 sm:size-11 items-center justify-center rounded-full bg-blue-600 text-white shadow-lg transition-all duration-300 hover:scale-110 active:scale-95"
         >
-          <Phone className="size-5" />
+          <Phone className="size-4.5 sm:size-5" />
         </a>
         <a
           href="https://linkedin.com/in/adaikalaraj-selvaraj-b7b275288"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="LinkedIn"
-          className="btn-luzia-secondary flex size-11 items-center justify-center rounded-full bg-sky-700 text-white shadow-lg transition-all duration-300 hover:scale-110 active:scale-95"
+          className="btn-luzia-secondary flex size-10 sm:size-11 items-center justify-center rounded-full bg-sky-700 text-white shadow-lg transition-all duration-300 hover:scale-110 active:scale-95"
         >
-          <Linkedin className="size-5" />
+          <Linkedin className="size-4.5 sm:size-5" />
         </a>
       </div>
     </main>
@@ -1228,7 +1228,7 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section id={id} className="mx-auto max-w-6xl scroll-mt-24 px-5 py-10">
+    <section id={id} className="mx-auto max-w-6xl w-full max-w-full scroll-mt-20 px-4 sm:px-6 py-8 sm:py-12">
       <Reveal>
         <div className="mb-6 flex flex-col gap-1 border-b border-border/60 pb-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
