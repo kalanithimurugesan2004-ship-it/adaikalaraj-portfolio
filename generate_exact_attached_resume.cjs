@@ -16,49 +16,49 @@ async function createAttachedResume() {
   const page = pdfDoc.addPage([595.28, 841.89]);
   const { width, height } = page.getSize();
 
-  let y = height - 38;
+  let y = height - 42;
 
   // 1. Header: Centered ADAIKALARAI S
   const nameText = 'ADAIKALARAJ S';
-  const nameWidth = fontBold.widthOfTextAtSize(nameText, 22);
+  const nameWidth = fontBold.widthOfTextAtSize(nameText, 24);
   page.drawText(nameText, {
     x: (width - nameWidth) / 2,
     y: y,
-    size: 22,
+    size: 24,
     font: fontBold,
     color: textBlack,
   });
 
-  y -= 20;
+  y -= 24;
 
   // Contact Info Row 1
   const contactText1 = 'Phone: +971 543351693       Email: adaikalaraj1993@gmail.com       Address: Ajman.UAE';
-  const c1Width = fontRegular.widthOfTextAtSize(contactText1, 9);
+  const c1Width = fontRegular.widthOfTextAtSize(contactText1, 9.5);
   
   // Draw green labels & text
-  page.drawText('Phone:', { x: (width - c1Width) / 2, y: y, size: 9, font: fontBold, color: greenAccent });
-  page.drawText('+971 543351693', { x: (width - c1Width) / 2 + 36, y: y, size: 9, font: fontRegular, color: textBlack });
+  page.drawText('Phone:', { x: (width - c1Width) / 2, y: y, size: 9.5, font: fontBold, color: greenAccent });
+  page.drawText('+971 543351693', { x: (width - c1Width) / 2 + 38, y: y, size: 9.5, font: fontRegular, color: textBlack });
 
-  page.drawText('Email:', { x: (width - c1Width) / 2 + 148, y: y, size: 9, font: fontBold, color: greenAccent });
-  page.drawText('adaikalaraj1993@gmail.com', { x: (width - c1Width) / 2 + 180, y: y, size: 9, font: fontRegular, color: textBlack });
+  page.drawText('Email:', { x: (width - c1Width) / 2 + 155, y: y, size: 9.5, font: fontBold, color: greenAccent });
+  page.drawText('adaikalaraj1993@gmail.com', { x: (width - c1Width) / 2 + 188, y: y, size: 9.5, font: fontRegular, color: textBlack });
 
-  page.drawText('Address:', { x: (width - c1Width) / 2 + 338, y: y, size: 9, font: fontBold, color: greenAccent });
-  page.drawText('Ajman.UAE', { x: (width - c1Width) / 2 + 382, y: y, size: 9, font: fontRegular, color: textBlack });
+  page.drawText('Address:', { x: (width - c1Width) / 2 + 355, y: y, size: 9.5, font: fontBold, color: greenAccent });
+  page.drawText('Ajman.UAE', { x: (width - c1Width) / 2 + 400, y: y, size: 9.5, font: fontRegular, color: textBlack });
 
-  y -= 14;
+  y -= 16;
 
   // LinkedIn Row
   const linkedinUrl = 'https://www.linkedin.com/in/adaikalaraj-selvaraj-b7b275288';
-  const lWidth = fontRegular.widthOfTextAtSize(linkedinUrl, 9);
+  const lWidth = fontRegular.widthOfTextAtSize(linkedinUrl, 9.5);
   page.drawText(linkedinUrl, {
     x: (width - lWidth) / 2,
     y: y,
-    size: 9,
+    size: 9.5,
     font: fontRegular,
     color: textBlack,
   });
 
-  y -= 10;
+  y -= 14;
 
   // Header Divider Green Line
   page.drawLine({
@@ -68,13 +68,13 @@ async function createAttachedResume() {
     color: greenAccent,
   });
 
-  y -= 16;
+  y -= 20;
 
   function drawSectionHeader(title) {
     page.drawText(title, {
       x: margin,
       y: y,
-      size: 10.5,
+      size: 11,
       font: fontBold,
       color: textBlack,
     });
@@ -85,7 +85,7 @@ async function createAttachedResume() {
       thickness: 1.2,
       color: greenAccent,
     });
-    y -= 14;
+    y -= 16;
   }
 
   // SUMMARY
@@ -95,76 +95,76 @@ async function createAttachedResume() {
     'different fields and realize my potential where I get the opportunity for continuous Learning.'
   ];
   summaryLines.forEach(line => {
-    page.drawText(line, { x: margin, y, size: 9, font: fontRegular, color: textBlack });
-    y -= 12;
+    page.drawText(line, { x: margin, y, size: 9.5, font: fontRegular, color: textBlack });
+    y -= 15;
   });
 
-  y -= 6;
+  y -= 8;
 
   // EDUCATION
   drawSectionHeader('EDUCATION');
   
   // BE
-  page.drawText('Bachelor of Engineering in Mechanical Engineering', { x: margin, y, size: 9.5, font: fontBold, color: textBlack });
-  page.drawText('2017', { x: width - margin - 25, y, size: 9.5, font: fontBold, color: textBlack });
-  y -= 12;
-  page.drawText('Hindusthan College of Engineering and Technology, Coimbatore', { x: margin, y, size: 8.5, font: fontRegular, color: textBlack });
-  y -= 12;
-  page.drawText('CGPA: 7.04', { x: margin, y, size: 8.5, font: fontRegular, color: textBlack });
-  y -= 15;
+  page.drawText('Bachelor of Engineering in Mechanical Engineering', { x: margin, y, size: 10, font: fontBold, color: textBlack });
+  page.drawText('2017', { x: width - margin - 25, y, size: 10, font: fontBold, color: textBlack });
+  y -= 14;
+  page.drawText('Hindusthan College of Engineering and Technology, Coimbatore', { x: margin, y, size: 9, font: fontRegular, color: textBlack });
+  y -= 14;
+  page.drawText('CGPA: 7.04', { x: margin, y, size: 9, font: fontRegular, color: textBlack });
+  y -= 16;
 
   // Diploma
-  page.drawText('Diploma Automobile Engineering', { x: margin, y, size: 9.5, font: fontBold, color: textBlack });
-  page.drawText('2013', { x: width - margin - 25, y, size: 9.5, font: fontBold, color: textBlack });
-  y -= 12;
-  page.drawText('Thanthai Rover Institute of Polytechnic College, Perambalur.', { x: margin, y, size: 8.5, font: fontRegular, color: textBlack });
-  y -= 12;
-  page.drawText('Percentage: 86.54%', { x: margin, y, size: 8.5, font: fontRegular, color: textBlack });
-  y -= 15;
+  page.drawText('Diploma Automobile Engineering', { x: margin, y, size: 10, font: fontBold, color: textBlack });
+  page.drawText('2013', { x: width - margin - 25, y, size: 10, font: fontBold, color: textBlack });
+  y -= 14;
+  page.drawText('Thanthai Rover Institute of Polytechnic College, Perambalur.', { x: margin, y, size: 9, font: fontRegular, color: textBlack });
+  y -= 14;
+  page.drawText('Percentage: 86.54%', { x: margin, y, size: 9, font: fontRegular, color: textBlack });
+  y -= 16;
 
   // HSC
-  page.drawText('Higher Secondary Certificate', { x: margin, y, size: 9.5, font: fontBold, color: textBlack });
-  page.drawText('2011', { x: width - margin - 25, y, size: 9.5, font: fontBold, color: textBlack });
-  y -= 12;
-  page.drawText('Sri Ragavendra Matriculation Higher Secondary School, Veeraganur', { x: margin, y, size: 8.5, font: fontRegular, color: textBlack });
-  y -= 12;
-  page.drawText('Percentage: 65', { x: margin, y, size: 8.5, font: fontRegular, color: textBlack });
-  y -= 15;
+  page.drawText('Higher Secondary Certificate', { x: margin, y, size: 10, font: fontBold, color: textBlack });
+  page.drawText('2011', { x: width - margin - 25, y, size: 10, font: fontBold, color: textBlack });
+  y -= 14;
+  page.drawText('Sri Ragavendra Matriculation Higher Secondary School, Veeraganur', { x: margin, y, size: 9, font: fontRegular, color: textBlack });
+  y -= 14;
+  page.drawText('Percentage: 65', { x: margin, y, size: 9, font: fontRegular, color: textBlack });
+  y -= 16;
 
   // SSLC
-  page.drawText('Secondary School Leaving', { x: margin, y, size: 9.5, font: fontBold, color: textBlack });
-  page.drawText('2009', { x: width - margin - 25, y, size: 9.5, font: fontBold, color: textBlack });
-  y -= 12;
-  page.drawText('Sri Ragavendra Matriculation Higher Secondary School, Veeraganur', { x: margin, y, size: 8.5, font: fontRegular, color: textBlack });
-  y -= 12;
-  page.drawText('Percentage: 70', { x: margin, y, size: 8.5, font: fontRegular, color: textBlack });
+  page.drawText('Secondary School Leaving', { x: margin, y, size: 10, font: fontBold, color: textBlack });
+  page.drawText('2009', { x: width - margin - 25, y, size: 10, font: fontBold, color: textBlack });
+  y -= 14;
+  page.drawText('Sri Ragavendra Matriculation Higher Secondary School, Veeraganur', { x: margin, y, size: 9, font: fontRegular, color: textBlack });
+  y -= 14;
+  page.drawText('Percentage: 70', { x: margin, y, size: 9, font: fontRegular, color: textBlack });
 
-  y -= 16;
+  y -= 18;
 
   // EXPERIENCE
   drawSectionHeader('EXPERIENCE');
 
   // Exp 1
-  page.drawText('•  Metal Fascination L.L.C, Ajman - UAE', { x: margin, y, size: 9.5, font: fontBold, color: textBlack });
-  page.drawText('2019', { x: width - margin - 25, y, size: 9.5, font: fontBold, color: textBlack });
-  y -= 12;
-  page.drawText('CAD/CAM Engineer (AHU,FAHU,HVAC)', { x: margin + 15, y, size: 8.5, font: fontRegular, color: textBlack });
-  y -= 15;
+  page.drawText('•  Metal Fascination L.L.C, Ajman - UAE', { x: margin, y, size: 10, font: fontBold, color: textBlack });
+  page.drawText('2019', { x: width - margin - 25, y, size: 10, font: fontBold, color: textBlack });
+  y -= 14;
+  page.drawText('CAD/CAM Engineer (AHU,FAHU,HVAC)', { x: margin + 15, y, size: 9, font: fontRegular, color: textBlack });
+  y -= 16;
 
   // Exp 2
-  page.drawText('•  Glazier Tehno Casting PVT LTD, Coimbatore', { x: margin, y, size: 9.5, font: fontBold, color: textBlack });
-  page.drawText('2017 - 2018', { x: width - margin - 60, y, size: 9.5, font: fontBold, color: textBlack });
-  y -= 12;
-  page.drawText('Quality Assurance Department', { x: margin + 15, y, size: 8.5, font: fontRegular, color: textBlack });
-  y -= 15;
+  page.drawText('•  Glazier Tehno Casting PVT LTD, Coimbatore', { x: margin, y, size: 10, font: fontBold, color: textBlack });
+  page.drawText('2017 - 2018', { x: width - margin - 60, y, size: 10, font: fontBold, color: textBlack });
+  y -= 14;
+  page.drawText('Quality Assurance Department', { x: margin + 15, y, size: 9, font: fontRegular, color: textBlack });
+  y -= 16;
 
   // Exp 3
-  page.drawText('•  Hyundai Motor India Limited, Chennai', { x: margin, y, size: 9.5, font: fontBold, color: textBlack });
-  page.drawText('2013 - 2014', { x: width - margin - 60, y, size: 9.5, font: fontBold, color: textBlack });
-  y -= 12;
-  page.drawText('PDI - PRE–DELIVERY INSPECTOR', { x: margin + 15, y, size: 8.5, font: fontRegular, color: textBlack });
+  page.drawText('•  Hyundai Motor India Limited, Chennai', { x: margin, y, size: 10, font: fontBold, color: textBlack });
+  page.drawText('2013 - 2014', { x: width - margin - 60, y, size: 10, font: fontBold, color: textBlack });
+  y -= 14;
+  page.drawText('PDI - PRE–DELIVERY INSPECTOR', { x: margin + 15, y, size: 9, font: fontRegular, color: textBlack });
 
-  y -= 16;
+  y -= 18;
 
   // COURSES
   drawSectionHeader('COURSES');
@@ -174,32 +174,32 @@ async function createAttachedResume() {
     'Completed Communication course in Sri Anu Institute, Coimbatore.'
   ];
   courseList.forEach(c => {
-    page.drawText('•', { x: margin, y, size: 8.5, font: fontRegular, color: textBlack });
-    page.drawText(c, { x: margin + 12, y, size: 8.5, font: fontRegular, color: textBlack });
-    y -= 13;
+    page.drawText('•', { x: margin, y, size: 9, font: fontRegular, color: textBlack });
+    page.drawText(c, { x: margin + 12, y, size: 9, font: fontRegular, color: textBlack });
+    y -= 15;
   });
 
-  y -= 16;
+  y -= 18;
 
   // SKILLS (2-column layout matching attached image)
   drawSectionHeader('SKILLS');
 
-  page.drawText('•  AutoCAD', { x: margin, y, size: 8.5, font: fontRegular, color: textBlack });
-  page.drawText('•  Lantek & Cypcut (Programming Software)', { x: margin + 220, y, size: 8.5, font: fontRegular, color: textBlack });
-  y -= 12;
+  page.drawText('•  AutoCAD', { x: margin, y, size: 9.5, font: fontRegular, color: textBlack });
+  page.drawText('•  Lantek & Cypcut (Programming Software)', { x: margin + 220, y, size: 9.5, font: fontRegular, color: textBlack });
+  y -= 15;
 
-  page.drawText('•  Solid Works', { x: margin, y, size: 8.5, font: fontRegular, color: textBlack });
-  page.drawText('•  Sheet Metal Design & Nesting', { x: margin + 220, y, size: 8.5, font: fontRegular, color: textBlack });
-  y -= 12;
+  page.drawText('•  Solid Works', { x: margin, y, size: 9.5, font: fontRegular, color: textBlack });
+  page.drawText('•  Sheet Metal Design & Nesting', { x: margin + 220, y, size: 9.5, font: fontRegular, color: textBlack });
+  y -= 15;
 
-  page.drawText('•  Creo', { x: margin, y, size: 8.5, font: fontRegular, color: textBlack });
-  page.drawText('•  Tally', { x: margin + 220, y, size: 8.5, font: fontRegular, color: textBlack });
-  y -= 12;
+  page.drawText('•  Creo', { x: margin, y, size: 9.5, font: fontRegular, color: textBlack });
+  page.drawText('•  Tally', { x: margin + 220, y, size: 9.5, font: fontRegular, color: textBlack });
+  y -= 15;
 
-  page.drawText('•  Pro-E', { x: margin, y, size: 8.5, font: fontRegular, color: textBlack });
-  page.drawText('•  Microsoft Excel', { x: margin + 220, y, size: 8.5, font: fontRegular, color: textBlack });
+  page.drawText('•  Pro-E', { x: margin, y, size: 9.5, font: fontRegular, color: textBlack });
+  page.drawText('•  Microsoft Excel', { x: margin + 220, y, size: 9.5, font: fontRegular, color: textBlack });
 
-  y -= 16;
+  y -= 18;
 
   // PROJECTS
   drawSectionHeader('PROJECTS');
@@ -209,12 +209,12 @@ async function createAttachedResume() {
     'Automatic Feeding and cutting machine using Geneva mechanism ( Engineering. main project )'
   ];
   projectList.forEach(p => {
-    page.drawText('•', { x: margin, y, size: 8.5, font: fontRegular, color: textBlack });
-    page.drawText(p, { x: margin + 12, y, size: 8.5, font: fontRegular, color: textBlack });
-    y -= 13;
+    page.drawText('•', { x: margin, y, size: 9, font: fontRegular, color: textBlack });
+    page.drawText(p, { x: margin + 12, y, size: 9, font: fontRegular, color: textBlack });
+    y -= 15;
   });
 
-  y -= 16;
+  y -= 18;
 
   // WORKSHOPS ATTENDED
   drawSectionHeader('WORKSHOPS ATTENDED:');
@@ -229,16 +229,16 @@ async function createAttachedResume() {
     if (w.length > 105) {
       const line1 = w.substring(0, 105);
       const line2 = w.substring(105);
-      page.drawText(line1, { x: margin + 12, y, size: 8, font: fontRegular, color: textBlack });
-      y -= 11;
-      page.drawText(line2, { x: margin + 12, y, size: 8, font: fontRegular, color: textBlack });
+      page.drawText(line1, { x: margin + 12, y, size: 8.5, font: fontRegular, color: textBlack });
+      y -= 12;
+      page.drawText(line2, { x: margin + 12, y, size: 8.5, font: fontRegular, color: textBlack });
     } else {
-      page.drawText(w, { x: margin + 12, y, size: 8, font: fontRegular, color: textBlack });
+      page.drawText(w, { x: margin + 12, y, size: 8.5, font: fontRegular, color: textBlack });
     }
-    y -= 13;
+    y -= 14;
   });
 
-  y -= 8;
+  y -= 10;
   page.drawLine({
     start: { x: margin, y },
     end: { x: width - margin, y },
@@ -250,7 +250,7 @@ async function createAttachedResume() {
   page.drawText('I hereby declared that all the information mentioned above are true to my knowledge.', {
     x: margin,
     y: y,
-    size: 8.5,
+    size: 9,
     font: fontRegular,
     color: textBlack,
   });
@@ -265,7 +265,7 @@ async function createAttachedResume() {
     fs.writeFileSync(distPath, pdfBytes);
   }
 
-  console.log('Successfully generated EXACT original resume PDF without overlaps at:', outputPath);
+  console.log('Successfully generated PERFECT full-page original resume PDF at:', outputPath);
 }
 
 createAttachedResume();
