@@ -1,25 +1,23 @@
-# Portfolio Perfected
+# Adaikalaraj Selvaraj — Mechanical Engineering Portfolio
 
-build porfolio i have given the reference replicate the same 
-nalysze the resume dont miss any content
+Results-driven **Mechanical Design Engineer**, **Manufacturing Engineer**, and **CNC Programmer** with 7+ years of hands-on industrial expertise spanning sheet metal design, CAD/CAM drafting, CNC programming (CypCut & Lantek Expert), production planning, and HVAC product development.
 
-This project was built with [Lovable](https://lovable.dev).
+## Tech Stack & Core Engineering Platforms
 
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/c8149c97-075f-4430-af8f-2cc2ad42f204).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+- **Core**: HTML, TypeScript, React 19, TailwindCSS v4
+- **Framework**: TanStack Start, TanStack Router, Vite
+- **CAD/CAM Tools**: AutoCAD 2D/3D, SolidWorks, Creo/Pro-E, Lantek Expert, CypCut
+- **Industrial Domains**: Mechanical Design, Sheet Metal Fabrication, CNC Fiber Laser & Turret Punching, QA/QC Inspection
 
 ## Development
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+```bash
+# Install dependencies
+npm install
 
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+# Start local dev server
 npm run dev
+
+# Production build
+npm run build
 ```
