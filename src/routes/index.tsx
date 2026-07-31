@@ -386,22 +386,28 @@ function Index() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden px-5 pt-6 pb-8">
+      <section className="relative overflow-hidden px-4 sm:px-6 pt-6 pb-10 w-full max-w-full">
         <div className="pointer-events-none absolute left-1/2 top-2 aura h-[450px] w-[550px] -translate-x-1/2 rounded-full opacity-70" />
+        <div className="pointer-events-none absolute inset-0 cad-grid opacity-25" />
+
         <div className="relative mx-auto max-w-6xl">
           <div className="grid items-center gap-8 md:grid-cols-[1fr_460px] lg:grid-cols-[1fr_540px]">
             {/* Left Content */}
             <div className="animate-[fade-in_0.8s_ease-out_both] text-left">
+              {/* HVAC Spec Pill */}
+              <div className="mb-3.5 inline-flex items-center gap-2 rounded-full border border-sky-500/30 bg-sky-500/10 px-4 py-1.5 text-xs font-extrabold text-sky-800 dark:text-sky-300 shadow-2xs">
+                <Wind className="size-3.5" /> HVAC • AHU • FCU • Precision Sheet Metal Engineering
+              </div>
+
               <h1 className="text-3xl font-black tracking-tight sm:text-5xl lg:text-6xl">
                 Adaikalaraj Selvaraj
               </h1>
-              <h2 className="mt-2 text-xl font-bold text-muted-foreground sm:text-2xl lg:text-3xl">
-                Mechanical Design Engineer | Manufacturing Engineer | CNC Programmer
+              <h2 className="mt-2 text-lg font-bold text-muted-foreground sm:text-2xl lg:text-3xl leading-snug">
+                Mechanical Design Engineer | HVAC & Sheet Metal Specialist | AHU / FCU Product Engineer
               </h2>
-              <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
+              <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-lg">
                 Results-driven Mechanical Design Engineer with <strong>7+ years</strong> of
-                manufacturing-focused expertise in sheet-metal design, CAD/CAM engineering, CNC
-                programming, fabrication documentation, production planning, and HVAC-related sheet-metal systems.
+                industrial expertise in sheet metal fabrication, AHU double-skin casing, FCU unit design, CAD/CAM drafting, CypCut & Lantek CNC programming, and HVAC product development.
               </p>
 
               {/* Badges */}
@@ -409,7 +415,7 @@ function Index() {
                 {heroBadges.map((badge) => (
                   <span
                     key={badge}
-                    className="rounded-full border border-border bg-card px-3.5 py-1.5 text-xs sm:text-sm font-semibold shadow-xs transition-colors hover:border-foreground/20"
+                    className="rounded-full border border-border bg-card px-3.5 py-1.5 text-xs sm:text-sm font-bold shadow-2xs transition-all hover:border-sky-500/40 hover:bg-sky-500/5"
                   >
                     {badge}
                   </span>
@@ -434,15 +440,15 @@ function Index() {
                 </button>
                 <button
                   type="button"
-                  onClick={() => scrollTo("experience")}
+                  onClick={() => scrollTo("hvac-products")}
                   className="btn-luzia-secondary border border-border bg-card px-6 py-3.5 text-sm sm:text-base font-bold hover:bg-secondary"
                 >
-                  View Experience
+                  HVAC & AHU/FCU Products
                 </button>
               </div>
             </div>
 
-            {/* Right Visual Image - Extra Large Prominent Portrait */}
+            {/* Right Visual Image */}
             <div className="relative mx-auto flex w-full max-w-[560px] lg:max-w-[620px] items-center justify-center">
               <div className="relative w-full overflow-hidden [mask-image:linear-gradient(to_bottom,black_75%,transparent_98%)]">
                 <img

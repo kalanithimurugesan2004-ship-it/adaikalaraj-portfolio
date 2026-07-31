@@ -145,6 +145,11 @@
   background-size: 25% 100%;
 }
 
+@utility cad-grid {
+  background-image: radial-gradient(oklch(0.4 0.04 230 / 0.25) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
 /* Framer Luzia Style Button Micro-interactions & Animations */
 @keyframes shimmer {
   0% {
